@@ -1,0 +1,12 @@
+package battle;
+
+import warrior.*;
+
+public class Battle {
+	
+	
+	public Battle( Warrior w , Warrior w2) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

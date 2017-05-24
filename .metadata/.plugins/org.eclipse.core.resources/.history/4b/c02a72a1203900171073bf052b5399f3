@@ -1,0 +1,32 @@
+package warrior;
+
+public class Knight extends Warrior {
+   
+	public Knight(String nam ){
+		name = nam;
+		hp += 45;
+		attack += 5;
+		def += 10;
+		
+		mp -= 45;
+		speed -=10;
+		evasion -=5;
+		job = "Knight";
+		System.out.println("I am now a Knight");
+	}
+	
+//	private void setWeapon(String weapon){
+//		switch(weapon){
+//		case "sword" : System.out.println("You have a sword");
+//		break;
+//			
+//		}
+//	}
+	
+	public void display(){
+		System.out.println(name+" the " +job +" has HP:"+hp+" and MP:"+mp);
+		System.out.println("Attack: "+attack+"\n Defense:"+def+"\n Speed:"+speed+"\n Evasion:"+evasion);
+	}
+	
+	
+}

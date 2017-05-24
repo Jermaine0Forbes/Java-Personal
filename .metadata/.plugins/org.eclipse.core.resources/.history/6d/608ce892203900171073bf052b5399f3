@@ -1,0 +1,13 @@
+package warrior;
+
+public abstract class Warrior {
+	protected String name, job;
+	protected int hp = 100,
+				  mp = 100,
+				  def = 10,
+			      attack = 10, 
+			      speed = 10, 
+			      evasion = 10;
+	
+	abstract public void display();
+}

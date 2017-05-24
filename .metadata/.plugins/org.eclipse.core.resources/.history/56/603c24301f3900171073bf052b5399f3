@@ -1,0 +1,17 @@
+package main;
+import warrior.*;
+public class Master {
+	
+	public static void main(String[] args){
+		
+		Warrior k = new Knight("jermaine");
+		
+		Warrior a = new Archer("jermaine");
+		
+		a.display();
+		k.display();
+		
+//		System.out.println("hello world");
+	}
+
+}
