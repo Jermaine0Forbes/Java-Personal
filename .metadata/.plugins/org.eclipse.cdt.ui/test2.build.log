@@ -1,8 +1,0 @@
-22:55:08 **** Clean-only build of configuration Debug for project test2 ****
-rm -rf src/test2.o libtest2.exe src/test2.d 
-      0 [main] us 0 init_cheap: VirtualAlloc pointer is null, Win32 error 487
-AllocationBase 0x0, BaseAddress 0x60EA0000, RegionSize 0x230000, State 0x10000
-C:\MinGW\msys\1.0\bin\rm.exe: *** Couldn't reserve space for cygwin's heap, Win32 error 0
-
-22:55:09 Build Finished (took 433ms)
-
