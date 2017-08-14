@@ -21,12 +21,32 @@ public abstract class Warrior extends Base {
 			System.out.println(" Attack: "+attack+"\n Defense:"+def+"\n Speed:"+speed+"\n Evasion:"+evasion);
 	 };
 	 
-	 public void getName(){
-			System.out.println(name);
+	 public String getName(){
+			return this.name;
 		}
+	 
+	 public String getJob(){
+			return this.job;
+		}
+	 
 	 
 	 public void setName(String str){
 			this.name = str;
 		}
+	 
+	 public int getAtk(){
+		 return this.attack;
+	 }
+	 
+	 public int getDef(){
+		 return this.def;
+	 }
+	 
+	 public int getSpd(){
+		 return this.speed;
+	 }
+	 public int getEva(){
+		 return this.evasion;
+	 }
 
 }

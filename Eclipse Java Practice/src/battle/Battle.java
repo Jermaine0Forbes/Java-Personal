@@ -12,7 +12,17 @@ public class Battle {
 	
 	public Battle( Warrior w , Warrior w2) {
 		System.out.println("And the battle commences!");
-		System.out.println("With "+w.name+" the "+w.job+" and "+w2.name+" the "+w2.job);
+		System.out.println("With "+w.getName()+" the "+w.getJob()+" and "+w2.getName()+" the "+w2.getJob());
+		Warrior copy;
+		for(int x = 0 ; x < 2; x++){
+			copy = (x == 0)? w:w2;
+			atkL[x] = copy.getAtk() ;
+			defL[x] = copy.getDef() ;
+			spdL[x] = copy.getSpd();
+			evaL[x] = copy.getEva();
+			
+			
+		}
 	}
 
 }
