@@ -12,17 +12,27 @@
 
 ## collections
 
+
+### hashmap
 - [how to create a hash map][hashmap]
 - [how to add key-values into the map][key-values]
-- how to retrieves all the keys in the map[keySet]
+- [how to retrieves all the keys in the map][keySet]
 - how to determine if a map is empty[isEmpty]
 - how to receive all the values of a map[Entry]
 - how to determine size of the map[size]
 
+[keySet]:#how-to-retrieves-all-keys-in-the-map
 [key-values]:#how-to-add-key-values-into-the-map
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+### how to retrieves all the keys in the map
+-
+```java
+
+
+```
 
 ### how to add key-values into the map
 - easy, it is with the put method
