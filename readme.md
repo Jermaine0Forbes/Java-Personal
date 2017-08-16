@@ -34,6 +34,7 @@
 
 ### how to determine size of the map
 - map.size() will give you the number
+
 ```java
 
     animals.put("whale", 5000);
@@ -51,6 +52,7 @@
 
 ### how to receive all the values of a map
 - map.values() will return all the values
+
 ```java
 
     animals.put("whale", 5000);
@@ -58,7 +60,7 @@
     animals.put("peacock", 40);
     animals.put("eagle", 15);
     animals.put("giraffe", 2350);
-    
+
     System.out.println(animals.values());
 
     //  output
@@ -70,6 +72,7 @@
 
 ### how to determine if a map is empty
 - map.isEmpty returns a boolean value of whether the map is empty or not
+
 ```java
     Map <String , Integer> animals = new HashMap <>();
 
@@ -80,6 +83,7 @@
 
 ### how to retrieves all the keys in the map
 - map.keySet returns all the keys in a array like output
+
 ```java
 
 Map <String , Integer> animals = new HashMap <>();
@@ -100,10 +104,12 @@ Map <String , Integer> animals = new HashMap <>();
 
 ### how to add key-values into the map
 - easy, it is with the put method
+
 ```java
  map.put(key,value);
 ```
 - example
+
 ```java
 
 	Map <String,Integer> animals = new HashMap <>();
@@ -129,17 +135,20 @@ be any data type that you like
 ### how to create an array
 - there are several ways to create an array
 1. Here is the first option
+
 ```java
 
 	String[] arry = new String[4];
 	// this declares an array, and states how many items will be in it
 ```
 2. the second option
+
 ```java
 	int[] arry = {1,2,5,9};
 	// you declare the array and add in the values immediately
 ```
 3. the third option is similar to the first option
+
 ```
 	String arry[] = new String[9];
 ```
