@@ -12,26 +12,100 @@
 
 ## collections
 
+### hashmap
+
 - [how to create a hash map][hashmap]
 - [how to add key-values into the map][key-values]
-- how to retrieves all the keys in the map[keySet]
-- how to determine if a map is empty[isEmpty]
-- how to receive all the values of a map[Entry]
-- how to determine size of the map[size]
+- [how to retrieves all the keys in the map][keySet]
+- [how to determine if a map is empty][isEmpty]
+- [how to receive all the values of a map][entry]
+- [how to determine size of the map][size]
 
+
+[entry]:#how-to-receive-all-the-values-of-a-map
+[size]:#how-to-determine-size-of-the-map
+[isEmpty]:#how-to-determine-if-a-map-is-empty
+[keySet]:#how-to-retrieves-all-the-keys-in-the-map
 [key-values]:#how-to-add-key-values-into-the-map
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+
+### how to determine size of the map
+- map.size() will give you the number
+```java
+
+    animals.put("whale", 5000);
+    animals.put("cheetah", 230);
+    animals.put("peacock", 40);
+    animals.put("eagle", 15);
+    animals.put("giraffe", 2350);
+
+    System.out.println(animals.size)
+
+    // output
+    5
+```
+[go back home][home]
+
+### how to receive all the values of a map
+- map.values() will return all the values
+```java
+
+    animals.put("whale", 5000);
+    animals.put("cheetah", 230);
+    animals.put("peacock", 40);
+    animals.put("eagle", 15);
+    animals.put("giraffe", 2350);
+    
+    System.out.println(animals.values());
+
+    //  output
+    [5000, 2350, 40, 15, 230]
+
+
+```
+[go back home][home]
+
+### how to determine if a map is empty
+- map.isEmpty returns a boolean value of whether the map is empty or not
+```java
+    Map <String , Integer> animals = new HashMap <>();
+
+    animals.isEmpty();
+    // will return true because I did not add any values
+```
+[go back home][home]
+
+### how to retrieves all the keys in the map
+- map.keySet returns all the keys in a array like output
+```java
+
+Map <String , Integer> animals = new HashMap <>();
+
+		animals.put("whale", 5000);
+		animals.put("cheetah", 230);
+		animals.put("peacock", 40);
+		animals.put("eagle", 15);
+		animals.put("giraffe", 2350);
+
+    System.out.println(animals.keySet)
+
+    // output
+    [whale, giraffe, peacock, eagle, cheetah]
+
+```
+[go back home][home]
 
 ### how to add key-values into the map
 - easy, it is with the put method
 ```java
  map.put(key,value);
 ```
-- example 
+- example
 ```java
-	
+
 	Map <String,Integer> animals = new HashMap <>();
 
 	animals.put("dog",1);
@@ -53,7 +127,7 @@ be any data type that you like
 [go back home][home]
 
 ### how to create an array
-- there are several ways to create an array 
+- there are several ways to create an array
 1. Here is the first option
 ```java
 
