@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author J
- *
- */
-package battle;
