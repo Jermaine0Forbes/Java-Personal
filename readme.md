@@ -3,6 +3,17 @@
 
 ## data types
 
+Type | Size | Range
+--- | --- | ---
+byte | 8 bits | -128 to 127
+short | 16 bits | -32,768 to 32,767
+int | 32 bits | -2,147,483,648 to 2,147,483,647
+long | 64 bits | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float | 32 bits | 3.40282347 x 10<sup>38</sup> to 1.40239846 x 10<sup>-45</sup>
+double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.9406564584124654 x 10<sup>-324</sup>
+
+## string
+- [how to use the trim method][trim]
 
 ## oop
 
@@ -21,7 +32,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
-
+[trim]:#how-to-use-the-trim-method
 [entry]:#how-to-receive-all-the-values-of-a-map
 [size]:#how-to-determine-size-of-the-map
 [isEmpty]:#how-to-determine-if-a-map-is-empty
@@ -31,6 +42,13 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+
+### how to use the trim method
+```java
+
+```
+
+[go back home][home]
 
 ### how to determine size of the map
 - map.size() will give you the number
