@@ -142,7 +142,7 @@ ArrayList<String> arr = new ArrayList<String>();
 
 
     // outputs
-    Without trim!
+    With trim!
     This is my sad World!@#$%^
 
 ```
