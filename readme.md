@@ -14,6 +14,7 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
 
 ## string
 - [how to use the trim method][trim]
+- [how to use the substring][substring]
 
 ## oop
 
@@ -36,6 +37,7 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
 - [how to determine size of the map][size]
 
 [a-list]:#how-to-create-an-ArrayList
+[substring]:#how-to-use-the-substring
 [trim]:#how-to-use-the-trim-method
 [entry]:#how-to-receive-all-the-values-of-a-map
 [size]:#how-to-determine-size-of-the-map
@@ -78,14 +80,70 @@ ArrayList<String> arr = new ArrayList<String>();
 
 ```java
 
+// second way to do this
+
 		for(String val:arr){
 			System.out.println(val+'+');
 		}
+
+// third way to do this
+
+		int x = arr.size();
+		
+		for(int y = 0; y < x ; y++){
+			
+			System.out.println(loop.next());
+			
+		}
 ```
+[go back home][home]
+
+
+
+### how to use the substring
+- returns part of a string that was cut off based on the
+ position of the index number
+
+```java
+
+    String msg = "This is a very long winded message";
+
+    msg = msg.substring(5);
+
+    System.out.println(msg);
+
+    //ouputs
+
+    is a very long winded message
+```
+
+[go back home][home]
 
 
 ### how to use the trim method
+- this method trims whitespace from the left and right side
+
 ```java
+    String msg = "This is my sad World            ";
+    String exc = "!@#$%^";
+
+    String both = msg+exc;
+    System.out.println("Without trim!");
+    System.out.println(both);
+
+    // outputs
+    Without trim!
+    This is my sad World        !@#$%^
+
+    System.out.println("\n With trim");
+    msg = msg.trim();
+    both = msg+exc;
+    System.out.println(both);
+
+
+    // outputs
+    Without trim!
+    This is my sad World!@#$%^
 
 ```
 
