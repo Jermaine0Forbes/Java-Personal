@@ -22,9 +22,12 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
 ## arrays
 - [how to create an array][array]
 
+**arraylist**
+- [how to create an ArrayList][a-list]
+
 ## collections
 
-### hashmap
+**hashmap**
 
 - [how to create a hash map][hashmap]
 - [how to add key-values into the map][key-values]
@@ -33,6 +36,7 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[a-list]:#how-to-create-an-ArrayList
 [substring]:#how-to-use-the-substring
 [trim]:#how-to-use-the-trim-method
 [entry]:#how-to-receive-all-the-values-of-a-map
@@ -43,6 +47,57 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+
+### how to create an ArrayList
+
+```java
+
+ArrayList<String> arr = new ArrayList<String>();
+
+		// this is how you add values to the list		
+		arr.add("Mario");
+		arr.add("Luigi");
+		arr.add("Wario");
+		arr.add("Peach");
+		
+		Iterator loop = arr.iterator();
+
+		// this one way to output the list
+		while(loop.hasNext()){
+			System.out.println(loop.next()+", ");
+		}
+
+		// outputs
+
+		Mario, 
+		Luigi, 
+		Wario, 
+		Peach,
+		
+```
+- here are the other ways to output an ArrayList
+
+```java
+
+// second way to do this
+
+		for(String val:arr){
+			System.out.println(val+'+');
+		}
+
+// third way to do this
+
+		int x = arr.size();
+		
+		for(int y = 0; y < x ; y++){
+			
+			System.out.println(loop.next());
+			
+		}
+```
+[go back home][home]
+
 
 
 ### how to use the substring
@@ -62,6 +117,7 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
     is a very long winded message
 ```
 
+[go back home][home]
 
 
 ### how to use the trim method
@@ -86,7 +142,7 @@ double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.940656458412465
 
 
     // outputs
-    Without trim!
+    With trim!
     This is my sad World!@#$%^
 
 ```
