@@ -1,16 +1,6 @@
 # java reference
 
 
-## data types
-
-Type | Size | Range
---- | --- | ---
-byte | 8 bits | -128 to 127
-short | 16 bits | -32,768 to 32,767
-int | 32 bits | -2,147,483,648 to 2,147,483,647
-long | 64 bits | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-float | 32 bits | 3.40282347 x 10<sup>38</sup> to 1.40239846 x 10<sup>-45</sup>
-double | 64 bits | 1.7976931348623157 x 10 <sup>308</sup>  to  4.9406564584124654 x 10<sup>-324</sup>
 
 ## string
 - [how to use the trim method][trim]
@@ -60,7 +50,7 @@ ArrayList<String> arr = new ArrayList<String>();
 		arr.add("Luigi");
 		arr.add("Wario");
 		arr.add("Peach");
-		
+
 		Iterator loop = arr.iterator();
 
 		// this one way to output the list
@@ -70,11 +60,11 @@ ArrayList<String> arr = new ArrayList<String>();
 
 		// outputs
 
-		Mario, 
-		Luigi, 
-		Wario, 
+		Mario,
+		Luigi,
+		Wario,
 		Peach,
-		
+
 ```
 - here are the other ways to output an ArrayList
 
@@ -89,11 +79,11 @@ ArrayList<String> arr = new ArrayList<String>();
 // third way to do this
 
 		int x = arr.size();
-		
+
 		for(int y = 0; y < x ; y++){
-			
+
 			System.out.println(loop.next());
-			
+
 		}
 ```
 [go back home][home]
