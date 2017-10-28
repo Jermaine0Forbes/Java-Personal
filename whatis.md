@@ -1,10 +1,10 @@
 # what is
 
-[what is polymorphism][polymorphism]
-[what does the static type do][static]
-[what is multithreading][thread]
-[what is an abstract class][abstract]
-[number data types][number-data]
+- [what is polymorphism][polymorphism]
+- [what does the static type do][static]
+- [what is multithreading][thread]
+- [what is an abstract class][abstract]
+- [number data types][number-data]
 
 [number-data]:#number-data-types
 [abstract]:#what-is-an-abstract-class
