@@ -4,20 +4,55 @@
 
 - [how to add name to button][nameBtn]
 
+
 ## JFrame
 
-- [setSize][setSize]
-- [setTitle][setTitle]
-- [setDefaultCloseOperation][closeOperation]
+- [JFrame.setSize][setSize]
+- [JFrame.setTitle][setTitle]
+- [JFrame.setDefaultCloseOperation][closeOperation]
+- [JFrame.setVisible][setvisible]
 
+## JPanel
+
+- [JPanel.add][panel-add]
+
+[panel-add]:#jpanel.add
 [nameBtn]:#how-to-add-name-to-button
-[closeOperation]:#setDefaultCloseOperation
+[closeOperation]:#jframe.setdefaultcloseoperation
 [home]:#java-swing
-[setSize]:#setSize
-[setTitle]:#setTitle
+[setSize]:#jframe.setsize
+[setTitle]:#jframe.settitle
+[setvisible]:#jframe.setvisible
+
+### JPanel.add
+
+```java
+	panel = new JPanel();
+
+		panel.setSize(height,width);
+		panel.setBackground(Color.black);
+
+		btn = new JButton("booty");
+
+		panel.add(btn);// adds JComponents to the panel
+
+		frame.add(panel);
+```
+
+[go back home][home]
 
 
-### JButton
+### JFrame.setVisible
+
+Allows the window JFrame to be visible, which is stupid since there is no reason
+to make it invisible
+
+```java
+frame.setVisible(true);
+```
+[go back home][home]
+
+### how to add name to button
 
 ```java
 
@@ -61,7 +96,7 @@ public class JButton_1  {
 
 [go back home][home]
 
-### setDefaultCloseOperation
+### JFrame.setDefaultCloseOperation
 
 when you click the exit button, it closes the application. If you did not have it
 then it will just minimize the app
@@ -92,7 +127,7 @@ public class Swing  {
 [go back home][home]
 
 
-### setTitle
+### JFrame.setTitle
 
 ```java
 import javax.swing.*;
@@ -118,7 +153,7 @@ public class Swing  {
 
 [go back home][home]
 
-### setSize
+### JFrame.setSize
 
 ```java
 import javax.swing.*;

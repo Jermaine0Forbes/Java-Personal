@@ -1,21 +1,21 @@
-# java reference
+# JAVA REFERENCE
 
 
 
-## string
+## String
 - [how to use the trim method][trim]
 - [how to use the substring][substring]
 
-## oop
+## OOP
 
 
-## arrays
+## Arrays
 - [how to create an array][array]
 
 **arraylist**
 - [how to create an ArrayList][a-list]
 
-## collections
+## Collections
 
 **hashmap**
 
