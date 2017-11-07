@@ -15,7 +15,9 @@
 ## JPanel
 
 - [JPanel.add][panel-add]
+- [JPanel.setBackground][panel-background]
 
+[panel-background]:#jpanel.setbackground
 [panel-add]:#jpanel.add
 [nameBtn]:#how-to-add-name-to-button
 [closeOperation]:#jframe.setdefaultcloseoperation
@@ -24,13 +26,26 @@
 [setTitle]:#jframe.settitle
 [setvisible]:#jframe.setvisible
 
-### JPanel.add
+
+### JPanel.setBackground
+
+Sets the background color of the panel. In order to change the color you have to
+alter the **Color** class, in this example I only used black.
 
 ```java
 	panel = new JPanel();
 
-		panel.setSize(height,width);
-		panel.setBackground(Color.black);
+	panel.setBackground(Color.black);
+
+	frame.add(panel);
+```
+
+[go back home][home]
+
+### JPanel.add
+
+```java
+	panel = new JPanel();
 
 		btn = new JButton("booty");
 
