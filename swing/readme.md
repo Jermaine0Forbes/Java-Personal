@@ -11,12 +11,14 @@
 - [JFrame.setTitle][setTitle]
 - [JFrame.setDefaultCloseOperation][closeOperation]
 - [JFrame.setVisible][setvisible]
+- [JFrame.setLocationRelativeTo][relativeTo]
 
 ## JPanel
 
 - [JPanel.add][panel-add]
 - [JPanel.setBackground][panel-background]
 
+[relativeTo]:#jframe.setlocationrelativeto
 [panel-background]:#jpanel.setbackground
 [panel-add]:#jpanel.add
 [nameBtn]:#how-to-add-name-to-button
@@ -26,6 +28,26 @@
 [setTitle]:#jframe.settitle
 [setvisible]:#jframe.setvisible
 
+
+### JFrame.setLocationRelativeTo
+
+**reference**
+- [java docs](https://docs.oracle.com/javase/7/docs/api/java/awt/Window.html#setLocationRelativeTo(java.awt.Component))
+
+This sets the location of the window to be centered or not
+
+```java
+class Frame extends JFrame{
+
+	public void Frame(){
+		setTitle("This is a title");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);// this should center the window
+	}
+}
+```
+
+[go back home][home]
 
 ### JPanel.setBackground
 

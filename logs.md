@@ -1,9 +1,25 @@
 # logs
 
+---
+
+## 11/7/17
+
+### shit about threads
+
+- when you execute `Thread t = new Thread();`, it is not running until you write
+out the start method `t.start()`, that is when it is runnable state.
+	- when it is in **runnable state** it doesn't execute code, but it now has the
+	ability to execute code
+- There are four types of states that threads can be in and that is
+**sleep, wait, blocked, and running**
+- the sleep method accepts time in milliseconds
+
+
+
 ## 10/6/17
 
 ### tasks
-- just learning more about threads, and hopefully remember to take notes 
+- just learning more about threads, and hopefully remember to take notes
 
 ## 10/5/17
 
