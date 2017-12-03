@@ -10,8 +10,8 @@ shit.
 - [show][stage-show]
 - [setScene][stage-scene]
 
-Scene
--[Scene][scene]
+## Scene
+- [Scene][scene]
 
 
 ## Layouts 
