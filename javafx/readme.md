@@ -1,10 +1,10 @@
 # JavaFX Guide
 
 I am basically learning all there is to know about JavaFX
-. And then  recording it because I know I will forget this 
+. And then  recording it because I know I will forget this
 shit.
 
-## Stage 
+## Stage
 
 - [setTitle][stage-title]
 - [show][stage-show]
@@ -14,22 +14,22 @@ shit.
 - [Scene][scene]
 
 
-## Layouts 
+## Layouts
 - [GridPane][grid]
 
 
 [scene]:#scene
 [grid]:#gridpane
-[stage-scene]:#stage.setscene
-[stage-show]:#stage.show
+[stage-scene]:#stagesetscene
+[stage-show]:#stageshow
 [home]:#javafx-guide
-[stage-title]:#stage.settitle
+[stage-title]:#stagesettitle
 
 ### Scene
 
 `Scene myScene = new Scene(layout, width, height)`
 
-The scene is the container that posesses the layouts that structure 
+The scene is the container that posesses the layouts that structure
 the elements within the window
 
 
@@ -41,22 +41,22 @@ the elements within the window
 ```java
 
 public class App4 extends Application {
-	
-	
+
+
 	@Override
 	public void start(Stage myStage){
-		
+
 		myStage.setTitle("This is a new window!");
 		GridPane root = new GridPane();
-		
+
 		Scene myScene = new Scene(root,720,480);// checkout out the scene
 		myStage.setScene(myScene);
 		myStage.show();
 	}
-	
-	
+
+
 	public static void main(String args[]){
-		
+
 		launch(args);
 	}
 
@@ -76,22 +76,22 @@ a gridpane is a class that supports a column/row layout
 
 ```java
 public class App4 extends Application {
-	
-	
+
+
 	@Override
 	public void start(Stage myStage){
-		
+
 		myStage.setTitle("This is a new window!");
 		GridPane root = new GridPane();// do you see that amazing gridpane?
-		
+
 		Scene myScene = new Scene(root,720,480);
 		myStage.setScene(myScene);
 		myStage.show();
 	}
-	
-	
+
+
 	public static void main(String args[]){
-		
+
 		launch(args);
 	}
 
@@ -101,7 +101,7 @@ public class App4 extends Application {
 
 [go back home][home]
 
-### Stage.setScene 
+### Stage.setScene
 
 **reference**
 - [setScene](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html#setScene-javafx.scene.Scene-)
@@ -110,22 +110,22 @@ Adds the scene to the Stage/Window class
 
 ```java
 public class App extends Application {
-	
-	
+
+
 	@Override
 	public void start(Stage myStage){
-		
+
 		myStage.setTitle("This is a new window!");
 		GridPane root = new GridPane();
-		
+
 		Scene myScene = new Scene(root,720,480);
 		myStage.setScene(myScene);// you see me adding it
 		myStage.show();
 	}
-	
-	
+
+
 	public static void main(String args[]){
-		
+
 		launch(args);
 	}
 
@@ -146,8 +146,8 @@ shows the window dummy
 
 ### Stage.setTitle
 
-**reference** 
-- [setTitle](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html#setTitle-java.lang.String-) 
+**reference**
+- [setTitle](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html#setTitle-java.lang.String-)
 
 sets the title to the window
 
@@ -167,22 +167,22 @@ import javafx.scene.*;
 import javafx.stage.*;
 
 public class App extends Application {
-	
-	
+
+
 	@Override
 	public void start(Stage myStage){
-		
+
 		myStage.setTitle("This is a new window!"); // this adds the title to the window
 		GridPane root = new GridPane();
-		
+
 		Scene myScene = new Scene(root,720,480);
 		myStage.setScene(myScene);
 		myStage.show();
 	}
-	
-	
+
+
 	public static void main(String args[]){
-		
+
 		launch(args);
 	}
 
