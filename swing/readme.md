@@ -13,11 +13,15 @@
 - [JFrame.setVisible][setvisible]
 - [JFrame.setLocationRelativeTo][relativeTo]
 
+## JLabel
+- [how to add text to label][label]
+
 ## JPanel
 
 - [JPanel.add][panel-add]
 - [JPanel.setBackground][panel-background]
 
+[label]:#how-to-add-text-to-label
 [relativeTo]:#jframe.setlocationrelativeto
 [panel-background]:#jpanel.setbackground
 [panel-add]:#jpanel.add
@@ -28,6 +32,22 @@
 [setTitle]:#jframe.settitle
 [setvisible]:#jframe.setvisible
 
+### How to add text to label
+
+**reference**
+- [javat](https://www.javatpoint.com/java-jlabel)
+
+```java
+
+JLabel label = new JLabel("this is some text");
+
+panel.add(label);
+
+frame.add(panel);
+
+```
+
+[go back home][home]
 
 ### JFrame.setLocationRelativeTo
 
