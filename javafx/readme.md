@@ -4,6 +4,10 @@ I am basically learning all there is to know about JavaFX
 . And then  recording it because I know I will forget this
 shit.
 
+## Events
+
+- [button event][btn-event]
+
 ## Stage
 
 - [setTitle][stage-title]
@@ -17,13 +21,84 @@ shit.
 ## Layouts
 - [GridPane][grid]
 
-
+[btn-event]:#button-event
 [scene]:#scene
 [grid]:#gridpane
 [stage-scene]:#stagesetscene
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+### Button event
+
+```java
+public void start(Stage myStage){
+
+		myStage.setTitle("Application 2 : Adding Events");
+
+		GridPane  grid = new GridPane();
+		grid.setHgap(20);
+		grid.setVgap(30);
+
+		btn = new Button("Click here");
+		t = new Text("This text can change");
+
+		btn.setOnAction(new EventHandler<ActionEvent>(){
+			public void handle(ActionEvent ae){
+
+				t.setText("The button has been pressed");
+			}
+
+		});// yes this long ass function allows you to add an event to a button
+
+
+
+		grid.add(btn, 1, 1);
+		grid.add(t, 1, 2);
+
+		Scene scene = new Scene(grid,720,480);
+
+		myStage.setScene(scene);
+
+		myStage.show();
+
+	}
+
+```
+
+#### Or lambda expressions
+
+```java
+
+public void start(Stage myStage){
+
+		myStage.setTitle("Application 2 : Adding Events");
+
+		GridPane  grid = new GridPane();
+		grid.setHgap(20);
+		grid.setVgap(30);
+
+		btn = new Button("Click here");
+		t = new Text("This text can change");
+
+		btn.setOnAction((ae) ->
+			t.setText("somebody poisoned the waterhole") // the other way to add event on button
+		);
+
+		grid.add(btn, 1, 1);
+		grid.add(t, 1, 2);
+
+		Scene scene = new Scene(grid,720,480);
+
+		myStage.setScene(scene);
+
+		myStage.show();
+
+	}
+
+```
+
+[go back home][home]
 
 ### Scene
 
