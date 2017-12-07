@@ -6,8 +6,10 @@
 - [how to use the trim method][trim]
 - [how to use the substring][substring]
 
-## OOP
+## Classes
 
+
+## Lambda Expressions
 
 ## Arrays
 - [how to create an array][array]
