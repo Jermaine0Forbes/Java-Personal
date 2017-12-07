@@ -14,12 +14,20 @@ shit.
 - [Scene][scene]
 
 
+## CheckBox 
+- [how to create a checkbox][checkbox]
+
 ## Layouts
 - [GridPane][grid]
 - [GridPane.setHgap][grid-hgap]
 - [GridPane.setVgap][grid-vgap]
 - [GridPane.add][grid-add]
+- [FlowPane][flow]
 
+## Button 
+
+[checkbox]:#how-to-create-a-checkbox
+[flow]:#flowpane
 [grid-add]:#gridadd
 [grid-vgap]:#gridpanesetvgap
 [grid-hgap]:#gridpanesethgap
@@ -29,6 +37,57 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+
+### How to create a checkbox
+
+```java
+
+```
+
+[go back home][home]
+
+
+### FlowPane
+
+`new FlowPane(Orientation, , )`
+
+I think the flow pane adjusts the elements positions when you resize 
+the window
+
+
+
+```java
+	public void start(Stage myStage){
+		
+		local = LocalDate.now();
+		
+		format = DateTimeFormatter.ofPattern("M/d/Y");
+		
+		date = local.format(format);
+		
+		myStage.setTitle("Testing "+date);
+		
+		box = new CheckBox("this is a checkbox");
+		
+		
+		FlowPane root = new FlowPane(Orientation.VERTICAL,10,10);
+		
+		root.setAlignment(Pos.CENTER);
+		
+		root.getChildren().add(box);
+		
+		Scene scene = new Scene(root,720,480);
+		
+		myStage.setScene(scene);
+		
+		myStage.show();
+		
+	}
+
+```
+[go back home][home]
+
 
 ### Grid.add
 
