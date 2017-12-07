@@ -17,6 +17,9 @@ shit.
 ## Scene
 - [Scene][scene]
 
+## Button
+- [how to create a button][button]
+
 
 ## CheckBox
 - [how to create a checkbox][checkbox]
@@ -27,9 +30,12 @@ shit.
 - [GridPane.setVgap][grid-vgap]
 - [GridPane.add][grid-add]
 - [FlowPane][flow]
+- [FlowPane.setVgap]
+- [FlowPane.setHgap]
+- [FlowPane.getChildren.add]
 
 
-
+[button]:#how-to-create-a-button
 [checkbox]:#how-to-create-a-checkbox
 [flow]:#flowpane
 [grid-add]:#gridadd
@@ -42,11 +48,31 @@ shit.
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
 
+### How to create a button
+
+```java
+
+Button btn = new Button("This is a new Button");
+```
+#### To import
+
+```java
+import javafx.scene.control.Button;
+```
+
+[go back home][home]
 
 ### How to create a checkbox
 
 ```java
 
+CheckBox box = new CheckBox("this is a checkbox");
+```
+
+#### To import
+
+```java
+import javafx.scene.control.CheckBox;
 ```
 
 [go back home][home]
@@ -54,7 +80,10 @@ shit.
 
 ### FlowPane
 
-`new FlowPane(Orientation, , )`
+**reference**
+-[java docs](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html)
+
+`new FlowPane(Orientation, hgap , vgap )`
 
 I think the flow pane adjusts the elements positions when you resize
 the window

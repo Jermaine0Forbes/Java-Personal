@@ -6,6 +6,12 @@
 - [how to use the trim method][trim]
 - [how to use the substring][substring]
 
+## Date
+
+- [LocalDate.now][localD]
+- [how to format dates][format-date]
+
+
 ## Classes
 
 
@@ -28,6 +34,8 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[format-date]:#datetimeformatterofpattern
+[localD]:#localdatenow
 [a-list]:#how-to-create-an-ArrayList
 [substring]:#how-to-use-the-substring
 [trim]:#how-to-use-the-trim-method
@@ -39,6 +47,62 @@
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+
+### DateTimeFormatter.ofPattern
+
+this will change the pattern format of the date
+
+```java
+date = LocalDate.now();// this returns the current date
+
+formatter = DateTimeFormatter.ofPattern("EEEE MMMM Y");// this modifies the date
+
+dateString =  date.format(formatter)// this will change the output of the date
+
+```
+
+[go back home][home]
+
+### LocalDate.now
+
+Apparently this is a new class from Java 8 to use to get the Date
+
+```java
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+
+public class LocalDate1 {
+
+	LocalDate date ;
+
+	DateTimeFormatter formatter;
+
+	public LocalDate1() {
+		// TODO Auto-generated constructor stub
+
+		date = LocalDate.now();// this returns the current date
+
+		formatter = DateTimeFormatter.ofPattern("EEEE MMMM Y");// this modifies the date
+
+
+
+		System.out.println(date.format(formatter));// this prints out the date
+
+
+}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new LocalDate1();
+
+	}
+
+}
+```
+
+[go back home][home]
 
 
 ### how to create an ArrayList
