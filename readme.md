@@ -10,6 +10,7 @@
 
 - [LocalDate.now][localD]
 - [how to format dates][format-date]
+- [DateTime table][time-table]
 
 
 ## Classes
@@ -34,6 +35,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[time-table]:#datetime-table
 [format-date]:#datetimeformatterofpattern
 [localD]:#localdatenow
 [a-list]:#how-to-create-an-ArrayList
@@ -48,6 +50,31 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+
+### DateTime Table
+
+**reference**
+- [java docs](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+
+Letter|Date or Time Component|Examples
+-|-|-
+G|Era Designator|Text|AD
+y|Year|1996; 96
+Y|Week year|2009; 09
+M|Month in year|July; Jul; 07
+w|Week in year|27
+W|Week in month|2
+E|Day name in week|Tuesday; Tue
+e/c|localized day-of-week|1
+a|am-pm-of-day|PM
+h|clock-hour-of-am-pm (1-12)|12
+k|clock-hour-of-am-pm (1-24)|14
+m|minute-of-hour|30
+s|second-of-minute|55
+V|time-zone ID| America/Los_Angeles; Z; -08:30
+z|time-zone name|Pacific Standard Time; PST
+
+[go back home][home]
 
 ### DateTimeFormatter.ofPattern
 
