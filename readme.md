@@ -10,7 +10,7 @@
 
 - [LocalDate.now][localD]
 - [how to format dates][format-date]
-- [DateTime table][time-table]
+- [DateTimeFormatter table][time-table]
 
 
 ## Classes
@@ -51,10 +51,10 @@
 [hashmap]:#how-to-create-a-hash-map
 
 
-### DateTime Table
+### DateTimeFormatter Table
 
 **reference**
-- [java docs](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [java docs](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 
 Letter|Date or Time Component|Examples
 -|-|-
