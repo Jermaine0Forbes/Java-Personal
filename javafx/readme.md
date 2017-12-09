@@ -34,7 +34,7 @@ shit.
 - [FlowPane.setHgap]
 - [FlowPane.getChildren.add]
 
-
+[btn-event]:#button-event
 [button]:#how-to-create-a-button
 [checkbox]:#how-to-create-a-checkbox
 [flow]:#flowpane
@@ -47,6 +47,20 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+
+### Button event
+
+```java
+btn.setOnAction(new EventHandler<ActionEvent>(){
+			public void handle(ActionEvent ae){
+				window.setScene(sc2);
+			}			
+		});
+
+```
+
+[go back home][home]
 
 ### How to create a button
 
