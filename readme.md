@@ -9,6 +9,7 @@
 ## Date
 
 - [LocalDate.now][localD]
+- [LocalDateTime]
 - [how to format dates][format-date]
 - [DateTimeFormatter table][time-table]
 
