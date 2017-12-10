@@ -16,6 +16,7 @@ shit.
 
 ## Scene
 - [Scene][scene]
+- [switch to different scenes][switch-scene]
 
 ## Button
 - [how to create a button][button]
@@ -30,10 +31,16 @@ shit.
 - [GridPane.setVgap][grid-vgap]
 - [GridPane.add][grid-add]
 - [FlowPane][flow]
-- [FlowPane.setVgap]
-- [FlowPane.setHgap]
-- [FlowPane.getChildren.add]
+- [FlowPane.setVgap][flow-vgap]
+- [FlowPane.setHgap][flow-hgap]
+- [FlowPane.getChildren.add][flow-add]
+- [FlowPane.getChildren.addAll][flow-addall]
 
+[switch-scene]:#switch-to-different-scenes
+[flow-addall]:#flowpanegetchildrenaddall
+[flow-vgap]:#flowpanesetvgap
+[flow-hgap]:#flowpanesethgap
+[flow-add]:#flowpanegetchildrenadd
 [btn-event]:#button-event
 [button]:#how-to-create-a-button
 [checkbox]:#how-to-create-a-checkbox
@@ -48,13 +55,105 @@ shit.
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
 
+### Switch to different scenes
+
+Essentially, you need use event methods to switch 
+between different scenes as shown below
+
+```java
+Stage window;
+	Button btn, btn2;
+	Text tx , tx2;
+	public void start(Stage myStage){
+		window = myStage;
+		window.setTitle("Testing Different Scenes");
+		tx = new Text("This is Scene 1");
+		btn = new Button("Switch to a different scene");
+		
+		GridPane grid = new GridPane();
+		grid.add(tx, 1, 1);
+		grid.add(btn, 1, 2);
+		grid.setVgap(20);
+		
+		final Scene sc = new Scene(grid,720,480);
+		
+	   window.setScene(sc);
+		
+		tx2 = new Text("This is Scene 2");
+		btn2 = new Button("Switch back to the first scene");
+		FlowPane flow = new FlowPane(Orientation.VERTICAL,10,10);
+		flow.setVgap(40);
+		flow.getChildren().addAll(tx2,btn2);
+		final Scene sc2 = new Scene(flow,480,720);
+		
+		// This button event switches to scene 2
+		btn.setOnAction(new EventHandler<ActionEvent>(){
+			public void handle(ActionEvent ae){
+				window.setScene(sc2);
+			}			
+		});
+		
+		// This button event switches to scene 1
+		btn2.setOnAction(new EventHandler<ActionEvent>(){
+			public void handle(ActionEvent ae){
+				window.setScene(sc);
+			}			
+		});
+		
+		window.show();
+		
+	}
+```
+
+[go back home][home]
+
+### FlowPane.getChildren.addAll
+
+Adds all the elements to the pane
+
+```java
+tx2 = new Text("This is Scene 2");
+btn2 = new Button("Switch back to the first scene");
+FlowPane flow = new FlowPane(Orientation.VERTICAL,10,10);
+flow.setVgap(40);
+flow.getChildren().addAll(tx2,btn2);//adds all the elements
+```
+
+[go back home][home]
+
+### FlowPane.setHgap
+
+Similar to [Grid.setHgap][grid-sethgap]
+
+[go back home][home]
+
+### FlowPane.setVgap
+
+Similar to [Grid.setVgap][grid-setvgap]
+
+
+[go back home][home]
+
+### FlowPane.getChildren.add
+
+Add elements/nodes to the FlowPane
+
+```java
+	FlowPane root = new FlowPane(Orientation.VERTICAL,10,10);
+		
+	root.setAlignment(Pos.CENTER);
+		
+	root.getChildren().add(button);
+```
+
+[go back home][home]
 
 ### Button event
 
 ```java
 btn.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent ae){
-				window.setScene(sc2);
+				//enter code
 			}			
 		});
 
