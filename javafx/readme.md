@@ -35,7 +35,13 @@ shit.
 - [FlowPane.setHgap][flow-hgap]
 - [FlowPane.getChildren.add][flow-add]
 - [FlowPane.getChildren.addAll][flow-addall]
+- [Flowpane.setAlignment][flow-align]
 
+## Other
+- [how to create an alert box][alert-box]
+
+[alert-box]:#how-to-create-an-alert-box
+[flow-align]:#flowpanesetalignment
 [switch-scene]:#switch-to-different-scenes
 [flow-addall]:#flowpanegetchildrenaddall
 [flow-vgap]:#flowpanesetvgap
@@ -55,9 +61,99 @@ shit.
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
 
+### How to create an alert box
+
+You have to create two files one for the main javafx window that we will call
+**App** and the other file for the next window that we are going to call **Modal**.
+
+```java
+
+//inside App or at least the start function
+public void start(Stage myStage){
+	   window = myStage;
+	   window.setTitle("Modal Popup");
+
+	   FlowPane flow = new FlowPane(Orientation.VERTICAL,20,20);
+	   flow.setAlignment(Pos.CENTER);
+
+	   btn = new Button("Open up modal");
+	   tx = new Text("Some Title");
+
+	   btn.setOnAction(e -> Modal.display());
+
+	   flow.getChildren().addAll(tx,btn);
+
+	   Scene scene = new Scene(flow,400,400);
+
+	   window.setScene(scene);
+	   window.show();
+   }
+```
+```java
+
+//inside Modal
+
+public class Modal {
+
+
+
+
+    public static void display(){
+
+        Stage window = new Stage();
+        window.setTitle("Modal Window");
+        window.initModality(Modality.APPLICATION_MODAL);// this options makes you have to close this window before going to another
+        Button btn = new Button("close window");
+        Text tx = new Text("This is a modal window");
+
+        FlowPane flow = new FlowPane();
+        flow.setAlignment(Pos.CENTER);
+        flow.getChildren().addAll(tx,btn);
+
+        btn.setOnAction(e -> window.close());
+
+        Scene scene = new Scene(flow,720,480);
+
+        window.setScene(scene);
+
+        window.showAndWait();// I'm not that sure why we needed this but it as added in the tutorial so..
+
+    }
+}
+
+```
+
+[go back home][home]
+
+### FlowPane.setAlignment
+
+**reference**
+- [docs](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html#setAlignment-javafx.geometry.Pos-)
+
+Aligns the elements in a certain position in the layout
+
+```java
+FlowPane flow = new FlowPane();
+
+flow.setAlignment(Pos.CENTER);
+```
+**Pos Options**
+- CENTER
+- BASELINE_CENTER
+- BASELINE_LEFT
+- BASELINE_RIGHT
+- TOP_CENTER
+- TOP_LEFT
+- TOP_RIGHT
+- BOTTOM_CENTER
+- BOTTOM_LEFT
+- BOTTOM_RIGHT
+
+[go back home][home]
+
 ### Switch to different scenes
 
-Essentially, you need use event methods to switch 
+Essentially, you need use event methods to switch
 between different scenes as shown below
 
 ```java
@@ -69,39 +165,39 @@ Stage window;
 		window.setTitle("Testing Different Scenes");
 		tx = new Text("This is Scene 1");
 		btn = new Button("Switch to a different scene");
-		
+
 		GridPane grid = new GridPane();
 		grid.add(tx, 1, 1);
 		grid.add(btn, 1, 2);
 		grid.setVgap(20);
-		
+
 		final Scene sc = new Scene(grid,720,480);
-		
+
 	   window.setScene(sc);
-		
+
 		tx2 = new Text("This is Scene 2");
 		btn2 = new Button("Switch back to the first scene");
 		FlowPane flow = new FlowPane(Orientation.VERTICAL,10,10);
 		flow.setVgap(40);
 		flow.getChildren().addAll(tx2,btn2);
 		final Scene sc2 = new Scene(flow,480,720);
-		
+
 		// This button event switches to scene 2
 		btn.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent ae){
 				window.setScene(sc2);
 			}			
 		});
-		
+
 		// This button event switches to scene 1
 		btn2.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent ae){
 				window.setScene(sc);
 			}			
 		});
-		
+
 		window.show();
-		
+
 	}
 ```
 
@@ -140,9 +236,9 @@ Add elements/nodes to the FlowPane
 
 ```java
 	FlowPane root = new FlowPane(Orientation.VERTICAL,10,10);
-		
+
 	root.setAlignment(Pos.CENTER);
-		
+
 	root.getChildren().add(button);
 ```
 
