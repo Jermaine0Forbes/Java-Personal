@@ -9,7 +9,7 @@
 ## Date
 
 - [LocalDate.now][localD]
-- [LocalDateTime]
+- [LocalDateTime][localDT]
 - [how to format dates][format-date]
 - [DateTimeFormatter table][time-table]
 
@@ -36,6 +36,8 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+
+[localDT]:#localdatetime
 [time-table]:#datetime-table
 [format-date]:#datetimeformatterofpattern
 [localD]:#localdatenow
@@ -52,6 +54,30 @@
 [hashmap]:#how-to-create-a-hash-map
 
 
+### LocalDateTime
+
+**reference**
+- [docs](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+
+
+```java
+LocalDateTime ldt = LocalDateTime.now();
+
+DateTimeFormatter dtf = DateTimeFormatter.ofPattern(" M - d - y");
+
+System.out.println(ldt.format(dtf))
+```
+#### Methods
+
+Returns | Method | Description
+
+-|-|-
+DayOfWeek|getDayOfWeek|Gets the day-of-week field, which is an enum DayOfWeek.
+int|getDayOfYear|Gets the day-of-year field.
+int|getDayOfMonth|Gets the day-of-month field.
+
+[go back home][home]
+
 ### DateTimeFormatter Table
 
 **reference**
@@ -67,6 +93,8 @@ w|Week in year|27
 W|Week in month|2
 E|Day name in week|Tuesday; Tue
 e/c|localized day-of-week|1
+D|day-of-the-year|189
+d | day-of-the-month|27
 a|am-pm-of-day|PM
 h|clock-hour-of-am-pm (1-12)|12
 k|clock-hour-of-am-pm (1-24)|14

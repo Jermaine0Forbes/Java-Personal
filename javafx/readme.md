@@ -21,6 +21,11 @@ shit.
 ## Button
 - [how to create a button][button]
 
+## ChoiceBox
+- [how to intialize choicebox][init-choice]
+- [ChoiceBox.getItems.add][choice-add]
+- [ChoiceBox.getItems.addAll][choice-addall]
+- [ChoiceBox.setValue][choice-value]
 
 ## CheckBox
 - [how to create a checkbox][checkbox]
@@ -29,6 +34,7 @@ shit.
 - [GridPane][grid]
 - [GridPane.setHgap][grid-hgap]
 - [GridPane.setVgap][grid-vgap]
+- [GridPane.setPadding][grid-padding]
 - [GridPane.add][grid-add]
 - [FlowPane][flow]
 - [FlowPane.setVgap][flow-vgap]
@@ -36,6 +42,12 @@ shit.
 - [FlowPane.getChildren.add][flow-add]
 - [FlowPane.getChildren.addAll][flow-addall]
 
+[init-choice]:#choiceboxsetvalue
+[choice-value]:#choiceboxgetitemssetvalue
+[choice-addall]:#choiceboxgetitemsaddall
+[choice-add]:#choiceboxgetitemsadd
+[init-choice]:#how-to-initialize-choicebox
+[grid-padding]:#gridpanesetpadding
 [switch-scene]:#switch-to-different-scenes
 [flow-addall]:#flowpanegetchildrenaddall
 [flow-vgap]:#flowpanesetvgap
@@ -54,6 +66,66 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+### ChoiceBox.setValue
+
+Set the default selected choice in the ChoiceBox
+
+```java
+ChoiceBox<String> choice  = new ChoiceBox();
+
+choice.getItems().addAll("Apple", "Athritus","Animal", "Arrogant");
+
+choice.setValue("Animal");
+```
+
+[go back home][home]
+
+### ChoiceBox.getItems.addAll
+
+Adds multiple items to the ChoiceBox
+
+```java
+ChoiceBox<String> choice  = new ChoiceBox();
+
+choice.getItems().addAll("Apple", "Athritus","Animal", "Arrogant");
+```
+
+[go back home][home]
+
+### ChoiceBox.getItems.add
+
+Adds an option to the choicebox
+
+```java
+ChoiceBox<String> choice  = new ChoiceBox();
+
+choice.getItems().add("Apple");
+```		
+
+[go back home][home]
+
+### How to initialize ChoiceBox
+
+`ChoiceBox<Data Type> choice = new ChoiceBox();`
+
+```java
+ChoiceBox<String> choice = new ChoiceBox();
+```
+
+[go back home][home]
+
+### GridPane.setPadding
+
+this sets the padding to the grid layout
+
+```java
+GridPane grid  = new GridPane();
+
+grid.setPadding(new Insets(10,10,10,10));// creates padding for the layout/pane
+```
+[go back home][home]
+
 
 ### Switch to different scenes
 
