@@ -18,6 +18,7 @@
 
 
 ## Lambda Expressions
+- [what is a lambda expression][what-lambda]
 
 ## Arrays
 - [how to create an array][array]
@@ -36,7 +37,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
-
+[what-lambda]:#what-is-a-lambda-expression
 [localDT]:#localdatetime
 [time-table]:#datetime-table
 [format-date]:#datetimeformatterofpattern
@@ -53,6 +54,44 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+### What is a Lambda Expression
+
+**reference**
+- (jenkov)[http://tutorials.jenkov.com/java/lambda-expressions.html]
+
+A lambda expression is a way to write a shorthand function. It is like
+the fat arrow function in javascript, except more clunky and unnecessary. 
+The reason why it is clunky and not efficient is that you need to create 
+an create a single method interface for to work, and you also need to have
+Java 8 installed
+
+```java
+
+class Cat{
+    
+    public Cat(){
+        System.out.println("Cat created");
+    }
+
+    public void meow(String sound){
+
+        (sound) -> System.out.println("The cat said : "+sound);
+    }
+
+    public static void main (String args[]){
+
+        Cat c = new Cat();
+
+        c.meow();
+    }
+
+    interface Lambda{
+        public void method(String sound);
+    }
+}
+```
+
+[go back home][home]
 
 ### LocalDateTime
 
