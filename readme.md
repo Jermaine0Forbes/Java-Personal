@@ -85,7 +85,7 @@ int|getDayOfMonth|Gets the day-of-month field.
 
 Letter|Date or Time Component|Examples
 -|-|-
-G|Era Designator|Text|AD
+G|Era Designator|AD
 y|Year|1996; 96
 Y|Week year|2009; 09
 M|Month in year|July; Jul; 07
