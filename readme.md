@@ -75,7 +75,9 @@ class Cat{
 
     public void meow(String sound){
 
-        (sound) -> System.out.println("The cat said : "+sound);
+       Lambda c = (sound) -> System.out.println("The cat said : "+sound);
+
+       c.method();
     }
 
     public static void main (String args[]){

@@ -9,7 +9,6 @@ shit.
 - [button event][btn-event]
 
 ## Stage
-
 - [setTitle][stage-title]
 - [show][stage-show]
 - [setScene][stage-scene]
@@ -21,11 +20,20 @@ shit.
 ## Button
 - [how to create a button][button]
 
+## ComboBox
+- [ComboBox.getItems.addAll][combo-all]
+- [ComboBox.setPromptText][combo-prompt]
+- [ComboBox.getValue][combo-value]
+- [ComboBox.setEditable][combo-edit]
+
+
+
 ## ChoiceBox
 - [how to intialize choicebox][init-choice]
 - [ChoiceBox.getItems.add][choice-add]
 - [ChoiceBox.getItems.addAll][choice-addall]
 - [ChoiceBox.setValue][choice-value]
+- [ChoiceBox.getSelectionModel.selectedItemProperty.addListener][]
 
 ## CheckBox
 - [how to create a checkbox][checkbox]
@@ -47,6 +55,10 @@ shit.
 ## Other
 - [how to create an alert box][alert-box]
 
+[combo-edit]:#comboboxseteditable
+[combo-value]:#comboboxgetvalue
+[combo-prompt]:#comboboxsetprompttext
+[combo-all]:#comboboxgetchildrenaddall
 [init-choice]:#choiceboxsetvalue
 [choice-value]:#choiceboxgetitemssetvalue
 [choice-addall]:#choiceboxgetitemsaddall
@@ -73,6 +85,83 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+
+### ComboBox.setEditable
+
+Allows you to edit the options within the combo box
+
+```java
+
+final ComboBox cb = new ComboBox();
+		
+cb.getItems().addAll("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
+		
+cb.setEditable(true);
+```
+
+[go back home][home]
+
+### ComboBox.getValue
+
+Gets the value of the current option that you selected
+
+```java
+
+Text t = new Text("Let's try to get the values of these things");
+		
+		
+		
+		final ComboBox cb = new ComboBox();
+		
+		cb.getItems().addAll("Pikachu", "Charmander", "Bulbasaur", "Squirtle");
+		
+		grid.setVgap(20);
+		grid.setHgap(20);
+		
+		grid.add(t,2,1);
+		grid.add(cb, 2, 2);
+		
+		cb.setOnAction(new EventHandler<ActionEvent>(){
+			public void handle(ActionEvent ae){
+				
+			System.out.println(cb.getValue());
+			}
+		});
+```
+
+[go back home][home]
+
+### ComboBox.setPromptText
+
+The prompt text is not an option, but is the first option that you will
+see in the combo box. Usually the prompt text will be used as a question
+to make the user decide which option he wants to choose.
+
+```java
+ComboBox cb2 = new ComboBox();
+		
+cb2.getItems().addAll("Mouth", "Tits", "Ass" );
+		
+cb2.setPromptText("Choose your favorite part of a woman");
+
+```
+
+[go back home][home]
+
+### ComboBox.getChildren.addAll
+
+Adds all the options to the combo box
+
+```java
+
+ComboBox cb = new ComboBox();
+		
+cb.getItems().addAll("Apples", "Bananas", "Carrots");
+```
+
+
+[go back home][home]
 
 ### ChoiceBox.setValue
 
