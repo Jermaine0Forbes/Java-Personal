@@ -15,7 +15,8 @@
 
 
 ## Classes
-
+- [the final keyword]
+- [public, private, and protected keywords]
 
 ## Lambda Expressions
 - [what is a lambda expression][what-lambda]
@@ -60,15 +61,15 @@
 - (jenkov)[http://tutorials.jenkov.com/java/lambda-expressions.html]
 
 A lambda expression is a way to write a shorthand function. It is like
-the fat arrow function in javascript, except more clunky and unnecessary. 
-The reason why it is clunky and not efficient is that you need to create 
+the fat arrow function in javascript, except more clunky and unnecessary.
+The reason why it is clunky and not efficient is that you need to create
 an create a single method interface for to work, and you also need to have
 Java 8 installed
 
 ```java
 
 class Cat{
-    
+
     public Cat(){
         System.out.println("Cat created");
     }
