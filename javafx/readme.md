@@ -20,6 +20,13 @@ shit.
 ## Button
 - [how to create a button][button]
 
+## ListView 
+- [ListView.getItems.addAll][list-all]
+- [ListView.getSelectionModel.setSelectionMode(SelectionMode)][list-selectionMode]
+- [ListView.getSelectionModel.getSelectedItems][list-selectedItems]
+- [ListView.setPreHeight][list-height]
+
+
 ## ComboBox
 - [ComboBox.getItems.addAll][combo-all]
 - [ComboBox.setPromptText][combo-prompt]
@@ -38,6 +45,8 @@ shit.
 ## CheckBox
 - [how to create a checkbox][checkbox]
 
+
+
 ## Layouts
 - [GridPane][grid]
 - [GridPane.setHgap][grid-hgap]
@@ -55,6 +64,20 @@ shit.
 ## Other
 - [how to create an alert box][alert-box]
 
+
+## CSS Stylesheets
+- [how to add stylesheet to app][stylesheet]
+- [css reference table][css-table]
+- [css inline style][css-inline]
+- [how to set an id][css-id]
+
+[css-id]:#how-to-set-an-id
+[css-inline]:#css-inline-style
+[css-table]:#css-reference-table
+[stylesheet]:#how-to-add-stylesheet-to-app
+[list-select]:#listviewgetselectionmodelgetselecteditems
+[list-selectionMode]:#listviewgetselectionmodelsetselectionmode(selectionmode)
+[list-all]:#listviewgetitemsaddall
 [combo-edit]:#comboboxseteditable
 [combo-value]:#comboboxgetvalue
 [combo-prompt]:#comboboxsetprompttext
@@ -85,6 +108,148 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+### How to set an id
+
+```java
+l.setId("fancy");
+
+```
+
+[go back home][home]
+
+### CSS Inline Style
+
+`Object.setStyle("Insert styles here")`
+
+```java
+Button b = new Button("Submit");
+		
+String btnStyle = "-fx-background-color:orange;"
+					+ "-fx-text-fill:white";
+		
+b.setStyle(btnStyle);
+```
+
+[go back home][home]
+
+### CSS Reference Table
+
+There are different properties in javafx that is not identical 
+to css so I am going to  equate javafx css to regular css
+
+JavaFX | CSS
+-|-
+-fx-background-color | background-color
+-fx-text-fill | color
+-fx-padding | padding
+-fx-font | font
+-fx-border-radius | border-radius
+-fx-border-radius | border-radius
+
+
+[go back home][home]
+
+### How to add Stylesheet to app
+
+You can either add the stylesheet to the layout or the scene.
+Either one will work
+
+```java
+// Note: You also have to reference that package that you are in
+scene.getStylesheets().add("javafx/style.css");
+```
+
+[go back home][home]
+
+### ListView.setPrefHeight
+
+Sets the height to the list view 
+
+```java
+
+lv.getItems().addAll("call of duty", "medal of honor", "battlefield", "battlegrounds");
+lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+lv.setPrefHeight(100);// Sets the height to be 100 pixels
+```
+
+[go back home][home]
+
+### ListView.getSelectionModel.getSelectedItems
+
+Extracts the selected items from the ListView so that can be assigned 
+to an ObservableList object. This object can then be to print out the items 
+singularly
+
+```java
+@Override
+	public void start(Stage myStage){
+		myStage.setTitle("ListView");
+		Text t  = new Text("Let's select multiple items");
+		final ListView<String> lv = new ListView();
+		lv.getItems().addAll("call of duty", "medal of honor", "battlefield", "battlegrounds");
+		lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+		lv.setPrefHeight(100);
+		Button btn = new Button("Action");
+		btn.setOnAction(new EventHandler<ActionEvent>(){
+			public void handle(ActionEvent ae){
+				showItems(lv);
+			}
+
+			
+		});
+		
+		FlowPane flow = new FlowPane(Orientation.VERTICAL,10,10);
+		flow.setAlignment(Pos.CENTER);
+		flow.getChildren().addAll(t,lv,btn);
+		Scene scene = new Scene(flow,720,480);
+		myStage.setScene(scene);
+		myStage.show();
+	}
+	
+	
+	private void showItems(ListView<String> list){
+		
+		ObservableList<String>  games;
+		String message = "";
+		
+		games = list.getSelectionModel().getSelectedItems();
+		
+		for(String m : games){
+			message += m+"\n";
+		}
+		
+		System.out.println(message);
+	}
+```
+
+[go back home][home]
+
+### ListView.getSelectionModel.setSelectionMode(SelectionMode)
+
+This allows you to select multiple items by holding the **Ctrl** key. And
+clicking on the other options
+
+```java
+ListView<String> lv = new ListView();
+lv.getItems().addAll("call of duty", "medal of honor", "battlefield", "battlegrounds");
+lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+lv.setPrefHeight(100);
+```
+
+[go back home][home]
+
+### ListView.getItems.addAll
+
+Adds all the items to the ListView 
+
+```java
+ListView<String> lv = new ListView();
+		
+lv.getItems().addAll("mario","link", "donkey kong");
+```
+
+[go back home][home]
 
 
 ### ComboBox.setEditable
