@@ -71,6 +71,9 @@ shit.
 - [css inline style][css-inline]
 - [how to set an id][css-id]
 
+## Property
+
+
 [css-id]:#how-to-set-an-id
 [css-inline]:#css-inline-style
 [css-table]:#css-reference-table
@@ -613,7 +616,7 @@ import javafx.scene.control.CheckBox;
 ### FlowPane
 
 **reference**
--[java docs](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html)
+- [java docs](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html)
 
 `new FlowPane(Orientation, hgap , vgap )`
 
