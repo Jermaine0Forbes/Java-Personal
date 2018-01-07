@@ -6,7 +6,8 @@ shit.
 
 ## Events
 
-- [button event][btn-event]
+- [setOnAction][btn-event]
+- [addListener][listen-please]
 
 ## Stage
 - [setTitle][stage-title]
@@ -24,7 +25,7 @@ shit.
 - [ListView.getItems.addAll][list-all]
 - [ListView.getSelectionModel.setSelectionMode(SelectionMode)][list-selectionMode]
 - [ListView.getSelectionModel.getSelectedItems][list-selectedItems]
-- [ListView.setPreHeight][list-height]
+- [ListView.setPrefHeight][list-height]
 
 
 ## ComboBox
@@ -34,13 +35,6 @@ shit.
 - [ComboBox.setEditable][combo-edit]
 
 
-
-## ChoiceBox
-- [how to intialize choicebox][init-choice]
-- [ChoiceBox.getItems.add][choice-add]
-- [ChoiceBox.getItems.addAll][choice-addall]
-- [ChoiceBox.setValue][choice-value]
-- [ChoiceBox.getSelectionModel.selectedItemProperty.addListener][]
 
 ## CheckBox
 - [how to create a checkbox][checkbox]
@@ -73,12 +67,24 @@ shit.
 
 ## Property
 
+- [How to create a String Property][]
 
+## ChoiceBox
+- [how to intialize choicebox][init-choice]
+- [ChoiceBox.getItems.add][choice-add]
+- [ChoiceBox.getItems.addAll][choice-addall]
+- [ChoiceBox.setValue][choice-value]
+- [ChoiceBox.getSelectionModel.selectedItemProperty.addListener][choice-listener]
+
+
+[listen-please]:#addlistener
+[list-height]:#listviewsetprefheight
+[choice-listener]:#choiceboxgetselectionmodelselecteditempropertyaddlistener
 [css-id]:#how-to-set-an-id
 [css-inline]:#css-inline-style
 [css-table]:#css-reference-table
 [stylesheet]:#how-to-add-stylesheet-to-app
-[list-select]:#listviewgetselectionmodelgetselecteditems
+[list-selectedItems]:#listviewgetselectionmodelgetselecteditems
 [list-selectionMode]:#listviewgetselectionmodelsetselectionmode(selectionmode)
 [list-all]:#listviewgetitemsaddall
 [combo-edit]:#comboboxseteditable
@@ -98,7 +104,7 @@ shit.
 [flow-vgap]:#flowpanesetvgap
 [flow-hgap]:#flowpanesethgap
 [flow-add]:#flowpanegetchildrenadd
-[btn-event]:#button-event
+[btn-event]:#setonaction
 [button]:#how-to-create-a-button
 [checkbox]:#how-to-create-a-checkbox
 [flow]:#flowpane
@@ -112,9 +118,95 @@ shit.
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
 
-### How to set an id
+### addListener
+
+The add listener method checks when a item is selected  and activates the 
+**changed** method inside of it. The **changed** method has three paramaters 
+`o, oldVal, and newVal`. 
+
+**The three changed parameters**
+- The **o** variable returns an object that has the properties `bean, name, and value`
+- The **oldVal** returns an object that contains the value of the previous selected item
+- The **newVal** returns an object that contains the value of the new selected item
+
+**Make sure you import**
+```java
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
+```
 
 ```java
+cb.getSelectionModel().selectedItemProperty().addListener(new ChangeListener(){
+	        @Override public void changed(ObservableValue o,Object oldVal, Object newVal){
+	             txt.setText(o.toString());
+	        }
+	      });
+```
+
+[go back home][home]
+
+### ListView.setPrefHeight
+
+Sets the preferred height of the list view box
+
+```java
+
+final ListView<String> lv = new ListView();
+lv.getItems().addAll("call of duty", "medal of honor", "battlefield", "battlegrounds");
+lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+lv.setPrefHeight(100);// Creates the height to be 100px?
+
+```
+
+[go back home][home]
+
+### ChoiceBox.getSelectionModel.selectedItemProperty.addListener
+
+The choice box add listener, checks when a item is selected  and activates the 
+**changed** method inside of it. The **changed** method has three paramaters 
+`o, oldVal, and newVal`. 
+
+- The **o** variable returns an object that has the properties `bean, name, and value`
+- The **oldVal** returns an object that contains the value of the previous selected item
+- The **newVal** returns an object that contains the value of the new selected item
+
+```java
+
+final TextArea txt = new TextArea();
+		txt.setText("Select");
+		Label lbl = new Label("Choose a Color!");
+		ChoiceBox<String> cb = new ChoiceBox();
+		
+		cb.getItems().addAll("Red", "Blue", "Green");
+		cb.setValue("Red");
+		cb.setPrefWidth(200);
+		cb.getSelectionModel().selectedItemProperty().addListener(new ChangeListener(){
+	        @Override public void changed(ObservableValue o,Object oldVal, Object newVal){
+	             txt.setText(newVal.toString()); // Make sure you call the toString property
+	        }
+	      });
+
+```
+
+[go back home][home]
+
+### How to set an id
+
+Allows you to to set a CSS ID to a JavaFX component
+
+**In CSS**
+```
+#fancy{
+	-fx-fill-text:pinky;
+	-fx-font-size:16px;
+}
+```
+
+**In java**
+```java
+Label l = new Label("This is a label");
+
 l.setId("fancy");
 
 ```
@@ -570,7 +662,7 @@ Add elements/nodes to the FlowPane
 
 [go back home][home]
 
-### Button event
+### setOnAction
 
 ```java
 btn.setOnAction(new EventHandler<ActionEvent>(){
