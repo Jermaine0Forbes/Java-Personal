@@ -15,8 +15,8 @@
 
 
 ## Classes
-- [the final keyword]
-- [public, private, and protected keywords]
+
+- [public,private,protected][access-modifiers]
 
 ## Lambda Expressions
 - [what is a lambda expression][what-lambda]
@@ -38,6 +38,8 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+
+[access-modifiers]:#public-private-protected
 [what-lambda]:#what-is-a-lambda-expression
 [localDT]:#localdatetime
 [time-table]:#datetime-table
@@ -54,6 +56,242 @@
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+### Public, Private, Protected
+
+**references**
+- [jenkov](http://tutorials.jenkov.com/java/access-modifiers.html)
+
+Public, private, and protected are keywords that are called access modifiers. 
+You can apply these modifiers to classes, class properties, and class methods. 
+The reason you use the modifiers is to deny or allow access to the members.
+
+#### Protected 
+
+The protected modifier allows the **class, property, or method** to be used 
+inside the class and outside the class. But, it will not work outside the package 
+unless you switch it to public
+
+Scenarios | Status 
+-|-
+Inside Class | Allows
+Outside Class | Allows 
+Outside Package | Denies
+
+**inside class**
+```java
+
+package Animal;
+
+public class Cat {
+    
+    protected String sound = "meow";
+
+    public Cat(){
+
+        System.out.println("created cat");
+    }
+
+    protected String getSound(){
+
+        return this.sound;
+    }
+
+}
+
+
+**outside class**
+```java
+
+package Animal;
+
+public class Main {
+    
+    public static void main(String[]args){
+
+        Cat c = new Cat();
+
+        c.getSound(); // works
+    }
+
+}
+
+```
+
+
+**outside package**
+```java
+
+package otherPackage;
+
+import Animal.*;
+
+public class Other {
+    
+    public static void main(String[]args){
+
+        Cat c = new Cat();
+
+        c.getSound(); // does not work
+    }
+
+}
+
+```
+
+[go back home][home]
+
+
+#### Public 
+
+The public modifier allows the **class, property, or method** to be used 
+inside the class, outside the class, and even outside the package that contains 
+the class
+
+Scenarios | Status 
+-|-
+Inside Class | Allows
+Outside Class | Allows 
+Outside Package | Allows
+
+**inside class**
+```java
+
+package Animal;
+
+public class Cat {
+    
+    public String sound = "meow";
+
+    public Cat(){
+
+        System.out.println("created cat");
+    }
+
+    public String getSound(){
+
+        return this.sound;
+    }
+
+}
+
+
+**outside class**
+```java
+
+package Animal;
+
+public class Main {
+    
+    public static void main(String[]args){
+
+        Cat c = new Cat();
+
+        c.getSound(); // works
+    }
+
+}
+
+```
+
+
+**outside package**
+```java
+
+package otherPackage;
+
+import Animal.*;
+
+public class Other {
+    
+    public static void main(String[]args){
+
+        Cat c = new Cat();
+
+        c.getSound(); // works
+    }
+
+}
+
+```
+
+[go back home][home]
+
+#### Private
+
+
+The private modifier denies the **class, property, or method** to be used 
+inside the class, outside the class, and even outside the package that contains 
+the class
+
+Scenarios | Status 
+-|-
+Inside Class | Denies
+Outside Class | Denies 
+Outside Package | Denies
+
+**inside class**
+```java
+
+package Animal;
+
+public class Cat {
+    
+    private String sound = "meow";
+
+    public Cat(){
+
+        System.out.println("created cat");
+    }
+
+    private String getSound(){
+
+        return this.sound;
+    }
+
+}
+
+
+**outside class**
+```java
+
+package Animal;
+
+public class Main {
+    
+    public static void main(String[]args){
+
+        Cat c = new Cat();
+
+        c.getSound(); // does not work
+    }
+
+}
+
+```
+
+
+**outside package**
+```java
+
+package otherPackage;
+
+import Animal.*;
+
+public class Other {
+    
+    public static void main(String[]args){
+
+        Cat c = new Cat();
+
+        c.getSound(); // does not work
+    }
+
+}
+
+```
+
+[go back home][home]
 
 ### What is a Lambda Expression
 
