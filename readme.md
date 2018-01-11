@@ -52,7 +52,7 @@
 [access-modifiers]:#public-private-protected
 [what-lambda]:#what-is-a-lambda-expression
 [localDT]:#localdatetime
-[time-table]:#datetime-table
+[time-table]:#datetimeformatter-table
 [format-date]:#datetimeformatterofpattern
 [localD]:#localdatenow
 [a-list]:#how-to-create-an-ArrayList
