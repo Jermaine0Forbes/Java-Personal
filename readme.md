@@ -13,10 +13,17 @@
 - [how to format dates][format-date]
 - [DateTimeFormatter table][time-table]
 
+## Enumerations
+
+- [how to create an enum][enum]
+- [Enum.valueOf][enum-valueof]
+- [Enum.values][enum-values]
+- [Enum.ordinal][enum-ordinal]
 
 ## Classes
 
 - [public,private,protected][access-modifiers]
+
 
 ## Lambda Expressions
 - [what is a lambda expression][what-lambda]
@@ -38,7 +45,10 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
-
+[enum-ordinal]:#enumordinal
+[enum-values]:#enumvalues
+[enum-valueof]:#enumvalueof
+[enum]:#how-to-create-an-enum
 [access-modifiers]:#public-private-protected
 [what-lambda]:#what-is-a-lambda-expression
 [localDT]:#localdatetime
@@ -56,6 +66,155 @@
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+### Enum.ordinal
+
+Shows the index number of the enum as if they were like arrays
+
+```java
+
+public enum Cities{
+
+		FLORIDA("Miami"),
+		GEORGIA("Atlanta"),
+		NEBRASKA("Omaha");
+
+		public String get;
+		private Cities(String city){
+
+			get = city;
+		}
+
+		public String phrase(){
+			return get+" is a great place to live";
+		}
+	}
+
+	........................
+	
+for(Cities val : c){
+
+			System.out.println(val.ordinal() +": "+ val.get);// Will output the index of the enum
+		}
+
+```
+
+**Output**
+```java
+0: Miami
+1: Atlanta
+2: Omaha
+
+```
+
+[go back home][home]
+
+### Enum.values 
+
+The values **method** returns an array of all the enum constants. You can read through them 
+with the for each loop
+
+```java
+public enum Cities{
+
+		FLORIDA("Miami"),
+		GEORGIA("Atlanta"),
+		NEBRASKA("Omaha");
+
+		public String get;
+		private Cities(String city){
+
+			get = city;
+		}
+
+		public String phrase(){
+			return get+" is a great place to live";
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Cities[] c = Cities.values();// This is how you collect the values
+
+		for(Cities val : c){ // this is you print out the values
+
+			System.out.println(val.ordinal() +": "+ val.phrase());
+		}
+
+
+	}
+```
+
+
+[go back home][home]
+
+### Enum.valueOf
+
+This **method** is pretty useless, it does not return the contained value of the 
+ENUM constant it just returns the name of the string that you put into the method
+
+```java
+public class Enum2 {
+
+	public enum MATH{
+
+		ADD("add something"),
+		SUB(" subtract something"),
+		DIV("divide something");
+
+		public String get;
+
+		private MATH(String val){
+
+			get = val;
+
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		MATH  x = MATH.valueOf("ADD");// Me using the method
+
+	  System.out.println(x); // This literally only prints out "ADD", you know, the string I already put in
+	}
+
+}
+```
+
+[go back home][home]
+
+### How to create an enum
+
+**reference**
+- [geeksforgeeks](https://www.geeksforgeeks.org/enum-in-java/)
+
+```java
+public enum Animal{
+		DOG("dog"),
+		CAT("cat"),
+		OSTRICH("ostrich");
+
+		public String get;
+
+		private Animal(String val){
+			get = val;
+		}
+	}
+	
+	public static void main(String args[]){
+	
+		Animal a = Animal.DOG;
+		
+		System.out.println(a.get); // outputs: dog
+	
+	}
+
+```
+
+[go back home][home]
 
 ### Public, Private, Protected
 

@@ -124,6 +124,9 @@ shit.
 The String property is an object that not only gets string values,
 but it can also add listeners to the values. Something, regular strings cannot do 
 
+**reference**
+- [StringProperty](https://docs.oracle.com/javase/8/javafx/api/javafx/beans/property/StringProperty.html)
+
 **Import**
 `import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;`
