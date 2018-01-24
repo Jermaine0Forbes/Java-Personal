@@ -23,7 +23,7 @@
 
 ## Classes
 
-- [public,private,protected][access-modifiers]
+- [public, private, protected][access-modifiers]
 
 
 ## Lambda Expressions
