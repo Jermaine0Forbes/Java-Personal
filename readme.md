@@ -16,7 +16,7 @@
 
 ## Classes
 
-- [public,private,protected][access-modifiers]
+- [public, private, protected][access-modifiers]
 
 ## Lambda Expressions
 - [what is a lambda expression][what-lambda]

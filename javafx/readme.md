@@ -21,6 +21,7 @@ shit.
 ## Button
 - [how to create a button][button]
 
+
 ## ListView 
 - [ListView.getItems.addAll][list-all]
 - [ListView.getSelectionModel.setSelectionMode(SelectionMode)][list-selectionMode]
@@ -76,6 +77,49 @@ shit.
 - [ChoiceBox.setValue][choice-value]
 - [ChoiceBox.getSelectionModel.selectedItemProperty.addListener][choice-listener]
 
+
+## TreeView
+- [TreeView.setExpanded]
+- [how to initialize TreeView]
+- [TreeView.setShowRoot]
+
+## TableView
+- [TableView]
+- [TableView.setItems()]
+- [TableView.getColumns().addAll()]
+- [TableColumn]
+- [TableColumn.setMinWidth()]
+- [TableColumn.setCellValueFactory()]
+
+### TableView.setItems()
+
+`TableView.setItems(ObservableList<Object>)`
+
+[go back home][home]
+
+### TableView
+
+`TableView<> table = new TableView<>()`
+
+[go back home][home]
+
+### TableColumn.setCellValueFactory()
+
+`TableColumn.setCellValueFactory( new PropertyValueFactory<>(String value))`
+
+[go back home][home]
+
+### TableColumn.setMinWidth()
+
+`TableColumn.setMinWidth(int value)`
+
+[go back home][home]
+
+### TableColumn
+
+`TableColum<Key,Value> variable = new TableColumn(String name)`
+
+[go back home][home]
 
 [listen-please]:#addlistener
 [list-height]:#listviewsetprefheight
