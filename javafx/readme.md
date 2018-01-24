@@ -68,7 +68,7 @@ shit.
 
 ## Property
 
-- [How to create a String Property][]
+- [How to create a String Property][string-property]
 
 ## ChoiceBox
 - [how to intialize choicebox][init-choice]
@@ -76,7 +76,6 @@ shit.
 - [ChoiceBox.getItems.addAll][choice-addall]
 - [ChoiceBox.setValue][choice-value]
 - [ChoiceBox.getSelectionModel.selectedItemProperty.addListener][choice-listener]
-
 
 ## TreeView
 - [TreeView.setExpanded]
@@ -121,6 +120,7 @@ shit.
 
 [go back home][home]
 
+
 [listen-please]:#addlistener
 [list-height]:#listviewsetprefheight
 [choice-listener]:#choiceboxgetselectionmodelselecteditempropertyaddlistener
@@ -162,6 +162,77 @@ shit.
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
 
+### How to create a StringProperty
+
+The String property is an object that not only gets string values,
+but it can also add listeners to the values. Something, regular strings cannot do 
+
+**reference**
+- [StringProperty](https://docs.oracle.com/javase/8/javafx/api/javafx/beans/property/StringProperty.html)
+
+**Import**
+`import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;`
+
+
+**Class that has StringProperty**
+```java
+public class Animal {
+
+	protected StringProperty type = new SimpleStringProperty(this,"cat");
+
+	public Animal(){
+
+		System.out.println("animal created");
+
+	}
+
+   public String getType(){
+	   return type.getName();
+   }
+   
+   public void setType(String str){
+	   
+	   type.setValue(str);
+   }
+
+
+
+
+}
+```
+
+**Inside the start method of a javafx**
+```java 
+FlowPane stack = new FlowPane(Orientation.VERTICAL,20,20);
+		stack.setAlignment(Pos.CENTER);
+
+		Animal a = new Animal();
+
+		Label lb = new Label(a.getType());
+		TextField tf = new TextField("Change the text");
+		Button btn = new Button("Change");
+
+		
+		btn.setOnAction((e)->{
+
+			a.setType(tf.getText());
+			lb.setText(tf.getText());
+		});
+	
+		// This will print the new value to console, once the value has changed
+		a.type.addListener((obj, oldValue, newValue)->{
+			System.out.println(newValue);
+		});
+
+		lb.setStyle("-fx-text-fill:white; -fx-font-size:20px;");
+
+		stack.getChildren().addAll(lb,tf,btn);
+
+```
+
+[go back home][home]
+
 ### addListener
 
 The add listener method checks when a item is selected  and activates the 
@@ -186,6 +257,14 @@ cb.getSelectionModel().selectedItemProperty().addListener(new ChangeListener(){
 	             txt.setText(o.toString());
 	        }
 	      });
+```
+
+**in lambda format**
+```java
+cb.getSelectionModel().selectedItemProperty().addListener(( obj, oldVal, newVal)->{
+	             txt.setText(o.toString());
+	        }
+	      );
 ```
 
 [go back home][home]
@@ -708,12 +787,23 @@ Add elements/nodes to the FlowPane
 
 ### setOnAction
 
+The method that triggers when an event happens
+
 ```java
 btn.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent ae){
 				//enter code
 			}			
 		});
+
+```
+
+**In lambda format**
+```java 
+btn.setOnAction((e)->{
+	// enter code
+	
+	});
 
 ```
 
