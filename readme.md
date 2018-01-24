@@ -8,9 +8,10 @@
 
 ## Date
 
+- [GregorianCalendar]
 - [LocalDate.now][localD]
 - [LocalDateTime][localDT]
-- [how to format dates][format-date]
+- [How to format dates][format-date]
 - [DateTimeFormatter table][time-table]
 
 ## Enumerations
