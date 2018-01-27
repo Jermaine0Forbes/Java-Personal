@@ -83,44 +83,23 @@ shit.
 - [TreeView.setShowRoot]
 
 ## TableView
-- [TableView]
-- [TableView.setItems()]
-- [TableView.getColumns().addAll()]
-- [TableColumn]
-- [TableColumn.setMinWidth()]
-- [TableColumn.setCellValueFactory()]
+- [How to create a TableView][create-table]
+- [TableView][table-view]
+- [TableView.setItems()][table-items]
+- [TableView.getColumns().addAll()][table-addAll]
+- [TableColumn][table-column]
+- [TableColumn.setMinWidth()][table-minwidth]
+- [TableColumn.setCellValueFactory()][table-cellvalue]
+- [ FXCollections.observableArrayList()][fxcollections]
 
-### TableView.setItems()
-
-`TableView.setItems(ObservableList<Object>)`
-
-[go back home][home]
-
-### TableView
-
-`TableView<> table = new TableView<>()`
-
-[go back home][home]
-
-### TableColumn.setCellValueFactory()
-
-`TableColumn.setCellValueFactory( new PropertyValueFactory<>(String value))`
-
-[go back home][home]
-
-### TableColumn.setMinWidth()
-
-`TableColumn.setMinWidth(int value)`
-
-[go back home][home]
-
-### TableColumn
-
-`TableColum<Key,Value> variable = new TableColumn(String name)`
-
-[go back home][home]
-
-
+[fxcollections]:#fxcollectionsobservablearraylist
+[create-table]:#how-to-create-a-tableview
+[table-cellvalue]:#tablecolumsetcellvaluefactory
+[table-minwidth]:#tablecolumnsetminwidth
+[table-column]:#tablecolumn
+[table-addAll]:#tableviewgetcolumnsaddall
+[table-items]:#tableviewsetitems
+[table-view]:#tableview
 [listen-please]:#addlistener
 [list-height]:#listviewsetprefheight
 [choice-listener]:#choiceboxgetselectionmodelselecteditempropertyaddlistener
@@ -161,6 +140,235 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+
+### FXCollections.observableArrayList()
+
+
+[go back home][home]
+
+### How to create a TableView
+
+**reference**
+- [JavaFX TableView Tutorial](https://o7planning.org/en/11079/javafx-tableview-tutorial)
+- [JavaFX Tutorial - JavaFX TableView](http://www.java2s.com/Tutorials/Java/JavaFX/0650__JavaFX_TableView.htm)
+
+
+**Note: you need to create a get method in the class to actually get all the 
+the data**
+
+**Here is App**
+```java
+@Override
+	public void start(Stage window){
+
+		window.setTitle("Practicing using TableView");
+
+		StackPane stack = new StackPane();
+
+		TableView<User> tb = new TableView<User>();
+
+		TableColumn<User,String> firstCol = new TableColumn<>("first name");
+
+		TableColumn<User,String> lastCol = new TableColumn<>("last name");
+
+		TableColumn<User,String> sexCol = new TableColumn<>("sex");
+
+		TableColumn<User,String> ageCol = new TableColumn<>("age");
+
+		firstCol.setMinWidth(100);
+		lastCol.setMinWidth(100);
+		sexCol.setMinWidth(100);
+		ageCol.setMinWidth(100);
+
+
+		firstCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+		lastCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+		sexCol.setCellValueFactory(new PropertyValueFactory<>("sex"));
+		ageCol.setCellValueFactory(new PropertyValueFactory<>("age"));
+
+		ObservableList<User> list = getList();
+		tb.setItems(list);
+		tb.getColumns().addAll(firstCol,lastCol,sexCol,ageCol);
+
+		stack.getChildren().add(tb);
+		Scene scene = new Scene(stack, 720,480);
+
+		window.setScene(scene);
+		window.show();
+	}
+
+	private ObservableList<User> getList(){
+
+		User u1 = new User("john","mackel","male",36);
+		User u2 = new User("rey","mary","female",24);
+		User u3 = new User("mark","hamill","male",67);
+
+		ObservableList<User> list = FXCollections.observableArrayList(u1, u2, u3);
+
+		return list;
+	}
+
+```
+**Here is the Class that I use for the table**
+```java
+public class User {
+
+	private String firstName ;
+	private String lastName;
+	private int age;
+	private String sex;
+
+	public User(String firstName, String lastName, String sex,  int age) {
+		this.age = age;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.sex = sex;
+	}
+
+	public String getFirstName (){
+
+		return this.firstName;
+	}
+
+	public String getLastName (){
+
+		return this.lastName;
+		}
+
+	public String getSex(){
+		return this.sex;
+	}
+
+	public int getAge(){
+		return this.age;
+	}
+
+}
+
+
+```
+
+[go back home][home]
+
+### TableView.setItems()
+
+The setItems method will add all the data created into the Table. But, the 
+data first has to be assigned to an ObservableList object.
+
+**Syntax**
+`TableView.setItems(ObservableList<Object>)`
+
+```java
+
+TableView<User> tb = new TableView<>();
+
+// Lets assume that the User Object only has one property which is name
+TableColumn<User,String> nameCol = new TableColumn<>("name");
+
+// Here we create multiple object to be used as data to be put into the table
+User u1 = new User("john mackel");
+User u2 = new User("rey mary");
+User u3 = new User("mark hamill");
+
+// FXCollections allows you to add multiple objects in an array
+ObservableList<User> items = FXCollections.observableArrayList(u1,u1,u3); 
+
+// setItems will then add the data into the table, as long as you have "getName"
+// type of methods that will retrieve the properties from the Object
+tb.setItems(items);
+
+```
+
+[go back home][home]
+
+### TableView
+
+This is how you create a Table View
+
+`TableView<Object> table = new TableView<>()`
+
+**App.java**
+```java
+
+TableView<User> table = new TableView<>();
+```
+
+**User.java**
+```java
+
+public class User{
+
+private String firstName;
+private String lastName;
+private String sex;
+private int age;
+
+User(String firstName, String lastName, String sex, int age){
+        this.age = age;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.sex = sex;
+    }
+
+
+}
+
+```
+
+[go back home][home]
+
+### TableColumn.setCellValueFactory()
+
+So this method is supposed to grab the property from the Object that you are using 
+and insert it into the table cell. **Note: you cannot retrieve the property values if 
+you do not have get methods for the property** . For example: getName()
+
+`TableColumn.setCellValueFactory( new PropertyValueFactory<>(String value))`
+
+```java 
+TableView<User> table = new TableView<>();
+
+TableColumn<User,String> firstCol = new TableColumn<>("First");
+TableColumn<User,String> lastCol = new TableColumn<>("Last");
+
+// Make sure that you name the property in the Object, so 
+// firstName is the actual property in the User object
+firstCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+firstCol.setMinWidth(100);
+lastCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+lastCol.setMinWidth(100);
+
+```
+
+[go back home][home]
+
+### TableColumn.setMinWidth()
+
+Creates the minimum width of the column, its pointless to show code here
+
+`TableColumn.setMinWidth(int value)`
+
+[go back home][home]
+
+### TableColumn
+
+`TableColumn<Object,Data type> variable = new TableColumn(String name)`
+
+**reference**
+- [TableColumnBase](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableColumnBase.html)
+- [TableColumn](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableColumn.html)
+
+```java
+
+TableView<User> table = new TableView<>();
+
+TableColumn<User,String> firstCol = new TableColumn<>("First");
+```
+
+[go back home][home]
+
+
 
 ### How to create a StringProperty
 
