@@ -84,6 +84,7 @@ shit.
 
 ## TableView
 - [How to create a TableView][create-table]
+- [How to enable editing table cells][table-edit]
 - [TableView][table-view]
 - [TableView.setItems()][table-items]
 - [TableView.getColumns().addAll()][table-addAll]
@@ -92,6 +93,7 @@ shit.
 - [TableColumn.setCellValueFactory()][table-cellvalue]
 - [ FXCollections.observableArrayList()][fxcollections]
 
+[table-edit]:#how-to-enable-editing-table-cells
 [fxcollections]:#fxcollectionsobservablearraylist
 [create-table]:#how-to-create-a-tableview
 [table-cellvalue]:#tablecolumsetcellvaluefactory
@@ -141,9 +143,27 @@ shit.
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
 
+### How to enable editing table cells
+
+**reference**
+- [How to make JavaFX TableView cells editable?](https://stackoverflow.com/questions/19335196/how-to-make-javafx-tableview-cells-editable)
+
+
+[go back home][home]
 
 ### FXCollections.observableArrayList()
 
+This class converts the objects into an ObservableList and assigns to an 
+variable that will compact them into an array
+
+`FXCollections.observableArrayList(List of objects);`
+
+```java
+// This is an object
+User u1 = new User("jermaine","forbes","male",27);
+ObservableList<User> item = FXCollections.observableArrayList(u1);
+table.setItems(item);
+```
 
 [go back home][home]
 

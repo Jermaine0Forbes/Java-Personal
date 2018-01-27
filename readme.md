@@ -6,6 +6,11 @@
 - [how to use the trim method][trim]
 - [how to use the substring][substring]
 
+## Conversions
+- [how to convert String to int]
+- [how to convert String to double]
+- [how to convert int to String]
+
 ## Date
 
 - [GregorianCalendar]
