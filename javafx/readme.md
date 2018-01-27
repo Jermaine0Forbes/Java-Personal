@@ -906,6 +906,7 @@ Essentially, you need use event methods to switch
 between different scenes as shown below
 
 ```java
+
 Stage window;
 	Button btn, btn2;
 	Text tx , tx2;
@@ -957,11 +958,13 @@ Stage window;
 Adds all the elements to the pane
 
 ```java
+
 tx2 = new Text("This is Scene 2");
 btn2 = new Button("Switch back to the first scene");
 FlowPane flow = new FlowPane(Orientation.VERTICAL,10,10);
 flow.setVgap(40);
 flow.getChildren().addAll(tx2,btn2);//adds all the elements
+
 ```
 
 [go back home][home]
@@ -1060,6 +1063,7 @@ the window
 
 
 ```java
+
 	public void start(Stage myStage){
 
 		local = LocalDate.now();
@@ -1093,7 +1097,14 @@ the window
 
 ### Grid.add
 
+`grid.add(Object, int Column,int Row)`
+
+**reference**
+- [GridPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
+- [GridPane.add](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html#add-javafx.scene.Node-int-int-)
+
 ```java
+
 public void start(Stage myStage){
 
 		myStage.setTitle("Application 2 : Adding Events");
