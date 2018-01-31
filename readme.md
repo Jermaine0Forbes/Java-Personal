@@ -7,9 +7,10 @@
 - [how to use the substring][substring]
 
 ## Conversions
-- [how to convert String to int]
-- [how to convert String to double]
-- [how to convert int to String]
+- [how to convert String to int][string-int]
+- [how to convert String to double][string-double]
+- [how to convert int to String][int-string]
+- [how to convert char to String][char-string]
 
 ## Date
 
@@ -51,6 +52,10 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[char-string]:#how-to-convert-char-to-string
+[string-double]:#how-to-convert-string-to-double
+[string-int]:#how-to-convert-string-to-int
+[int-string]:#how-to-convert-int-to-string
 [enum-ordinal]:#enumordinal
 [enum-values]:#enumvalues
 [enum-valueof]:#enumvalueof
@@ -72,6 +77,131 @@
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+
+### How to convert char to String
+
+Here are the two methods
+- **Character.toString(char)**
+- **String.valueOf(char) **
+
+**reference**
+- [How to convert Character to String and a String to Character Array in Java](https://examples.javacodegeeks.com/core-java/character/how-to-convert-character-to-string-and-a-string-to-character-array-in-java/)
+
+**Character.toString(char)**
+```java
+char ch = 'J';
+
+String string1 = Character.toString(ch);
+
+
+```
+**String.valueOf(char)**
+```java
+char ch = 'J';
+
+String string1 = String.valueOf(ch);
+
+```
+
+[go back home][home]
+
+### How to convert String to double
+
+Here are the several methods to do it
+- **Double.parseDouble(string)**
+- **Double.valueOf(string)**
+- **new Double(string)**
+
+**reference**
+- [Java Convert String to Double examples](https://beginnersbook.com/2013/12/how-to-convert-string-to-double-in-java/)
+
+**Double.parseDouble(string)**
+```java
+String str="122.202";
+double var= Double.parseDouble(str);
+
+```
+
+**Double.valueOf(string)**
+```java
+String str="122.202";
+double var= Double.parseDouble(str);
+
+```
+
+**new Double(string)**
+```java
+String str3 = "999.333";
+double var3 = new Double(str3);
+```
+
+[go back home][home]
+
+### How to convert String to int
+
+There are several methods to do it
+
+- **Integer.toString(string)**
+- **Integer.valueOf(string)**
+
+**Integer.toString(string)**
+```java
+String number = "10";
+int result = Integer.parseInt(number);
+System.out.println(result);
+
+```
+
+**Integer.valueOf(string)**
+```java
+String number = "10";
+Integer result = Integer.valueOf(number);
+System.out.println(result);
+```
+
+[go back home][home]
+
+
+### How to convert Int to String
+
+There are several methods to convert an integer to a string here are 
+a couple 
+
+- **String.valueOf(int)**
+- **Integer.toString(int)**
+- **String.format(String format, Object... args)**
+- **StringBuilder.toString()**
+- `String numberAsString = "" + number;`
+
+**String.valueOf(int)**
+```java
+int number = -782;
+String numberAsString = String.valueOf(number);
+
+```
+**Integer.toString(int)**
+```java
+int number = -782;
+String numberAsString = Integer().toString(number);
+
+```
+**String.format(String format, Object... args)**
+```java
+int number = -782;
+String numberAsString = String.format ("%d", number);
+
+```
+**StringBuilder.toString()**
+```java
+int number = -782;
+StringBuilder sb = new StringBuilder();
+sb.append(number);
+String numberAsString = sb.toString();
+
+```
+
+[go back home][home]
 
 ### Enum.ordinal
 
