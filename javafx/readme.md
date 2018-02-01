@@ -145,9 +145,26 @@ shit.
 
 ### How to enable editing table cells
 
+To edit a specific column in a table you have to use this method 
+`TableColumn.setCellFactory(TextFieldTableCell.forTableColumn());`
+
 **reference**
 - [How to make JavaFX TableView cells editable?](https://stackoverflow.com/questions/19335196/how-to-make-javafx-tableview-cells-editable)
 
+```java
+StackPane tableGroup = new StackPane();
+
+TableView<Movie> table = new TableView<>();
+
+TableColumn<Movie,String> nameCol = new TableColumn<>("Name");
+
+nameCol.setCellValueFactory(new PropertyValueFactory("name"));
+
+// this will allow the name column to be editable, I think you also have 
+// to use the method TableView.setEditable(true)
+nameCol.setCellFactory(TextFieldTableCell.forTableColumn()); 
+
+```
 
 [go back home][home]
 

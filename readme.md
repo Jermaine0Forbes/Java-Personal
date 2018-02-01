@@ -14,7 +14,7 @@
 
 ## Date
 
-- [GregorianCalendar]
+- [GregorianCalendar][greg-cal]
 - [LocalDate.now][localD]
 - [LocalDateTime][localDT]
 - [How to format dates][format-date]
@@ -52,6 +52,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[greg-cal]:#gregoriancalendar
 [char-string]:#how-to-convert-char-to-string
 [string-double]:#how-to-convert-string-to-double
 [string-int]:#how-to-convert-string-to-int
@@ -78,6 +79,37 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+
+### GregorianCalendar
+
+Field|Default Value
+-|-
+ERA|AD
+YEAR|1970
+MONTH|JANUARY
+DAY_OF_MONTH|1
+DAY_OF_WEEK|the first day of week
+WEEK_OF_MONTH|0
+DAY_OF_WEEK_IN_MONTH|1
+HOUR, HOUR_OF_DAY, MINUTE, SECOND, MILLISECOND|0
+
+
+**reference**
+- [java docs](https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
+
+```java
+
+Calendar cal = new GregorianCalendar();
+
+Date d = new Date();
+
+cal.setTime(d);
+
+System.out.println(cal.get(Calendar.YEAR)); // 2018
+
+```
+
+[go back home][home]
 
 ### How to convert char to String
 
