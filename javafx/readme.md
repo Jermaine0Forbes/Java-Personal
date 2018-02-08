@@ -43,11 +43,15 @@ shit.
 
 
 ## Layouts
+
+**GridPane**
 - [GridPane][grid]
 - [GridPane.setHgap][grid-hgap]
 - [GridPane.setVgap][grid-vgap]
 - [GridPane.setPadding][grid-padding]
 - [GridPane.add][grid-add]
+
+**FlowPane**
 - [FlowPane][flow]
 - [FlowPane.setVgap][flow-vgap]
 - [FlowPane.setHgap][flow-hgap]
@@ -78,9 +82,9 @@ shit.
 - [ChoiceBox.getSelectionModel.selectedItemProperty.addListener][choice-listener]
 
 ## TreeView
-- [TreeView.setExpanded]
-- [how to initialize TreeView]
-- [TreeView.setShowRoot]
+- [TreeItem.setExpanded][treeitem-expand]
+- [how to initialize TreeView][init-treeview]
+- [TreeView.setShowRoot][treeview-show]
 
 ## TableView
 - [How to create a TableView][create-table]
@@ -93,6 +97,9 @@ shit.
 - [TableColumn.setCellValueFactory()][table-cellvalue]
 - [ FXCollections.observableArrayList()][fxcollections]
 
+[treeitem-expand]:#treeitemsetexpanded
+[treeview-show]:#treeviewsetshowroot
+[init-treeview]:#how-to-initialize-treeview
 [table-edit]:#how-to-enable-editing-table-cells
 [fxcollections]:#fxcollectionsobservablearraylist
 [create-table]:#how-to-create-a-tableview
@@ -142,6 +149,108 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+### TreeItem.setExpanded()
+
+This method determines whether or not the TreeItem will be collapsed 
+or expanded
+
+```java
+rootItem  = new TreeItem<String>("General");
+rootItem.setExpanded(true);
+```
+
+[go back home][home]
+
+### TreeView.setShowRoot()
+
+This method is a boolean method that determines whether or not you want to show the root of 
+the TreeItem that is containing all the other branches
+
+```java
+rootItem  = new TreeItem<String>("General");
+		rootItem.setExpanded(true);
+......
+
+TreeView<String> tree = new TreeView<String>(rootItem);
+tree.setShowRoot(false);// Since I put false you will not see the "General" TreeItem
+```
+
+[go back home][home]
+
+### How to initialize TreeView
+
+**This class will be used to create a tree view**
+**Note:** You have to overide the `toString` method in order to
+output information from a property you created
+```java
+
+public class BookCategory {
+
+	private String category;
+	private String name;
+
+
+	public BookCategory(String cat ,String tit){
+
+		category = cat;
+		this.name = tit;
+	}
+
+
+	public void setCategory(String val){
+
+		category = val;
+	}
+
+	public void setName(String val){
+
+		this.name = val;
+	}
+
+
+	public String getName(){
+
+			return this.name;
+		}
+
+	public String getCategory(){
+
+		return category;
+	}
+
+        // this will show the information
+	  @Override
+	    public String toString()  {
+	        return this.name;
+	    }
+
+}
+
+```
+
+```java
+
+BookCategory  catGen = new BookCategory("General", "Here are the list of books");
+BookCategory catLang = new BookCategory("Language","How to speak English");
+BookCategory catEnt = new BookCategory("Entertainment", "How to get women naked in 60 seconds");
+BookCategory catLang2 = new BookCategory("Language", "When to say Bonjour");
+
+TreeItem<BookCategory> rootItem = new TreeItem<BookCategory>(catGen);
+rootItem.setExpanded(true);
+
+TreeItem<BookCategory> lang = new TreeItem<BookCategory>(catLang);
+
+TreeItem<BookCategory> ent = new TreeItem<BookCategory>(catEnt);
+
+TreeItem<BookCategory> lang2 = new TreeItem<BookCategory>(catLang2);
+
+rootItem.getChildren().addAll(lang,ent,lang2);
+
+TreeView<BookCategory> tree = new TreeView<BookCategory>(rootItem);
+```
+
+[go back home][home]
 
 ### How to enable editing table cells
 
