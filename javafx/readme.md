@@ -97,6 +97,7 @@ shit.
 - [TableColumn.setCellValueFactory()][table-cellvalue]
 - [ FXCollections.observableArrayList()][fxcollections]
 
+[string-property]:#how-to-create-a-stringproperty
 [treeitem-expand]:#treeitemsetexpanded
 [treeview-show]:#treeviewsetshowroot
 [init-treeview]:#how-to-initialize-treeview
