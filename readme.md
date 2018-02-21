@@ -132,7 +132,7 @@ System.out.println(cal.get(Calendar.YEAR)); // 2018
 
 Here are the two methods
 - **Character.toString(char)**
-- **String.valueOf(char) **
+- **String.valueOf(char)**
 
 **reference**
 - [How to convert Character to String and a String to Character Array in Java](https://examples.javacodegeeks.com/core-java/character/how-to-convert-character-to-string-and-a-string-to-character-array-in-java/)
