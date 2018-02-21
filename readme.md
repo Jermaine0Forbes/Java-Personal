@@ -20,6 +20,9 @@
 - [How to format dates][format-date]
 - [DateTimeFormatter table][time-table]
 
+## Editors 
+- [Eclipse shortcut keys][eclipse-shortcut]
+
 ## Enumerations
 
 - [how to create an enum][enum]
@@ -52,6 +55,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[eclipse-shortcut]:#eclipse-shortcut-keys
 [greg-cal]:#gregoriancalendar
 [char-string]:#how-to-convert-char-to-string
 [string-double]:#how-to-convert-string-to-double
@@ -79,6 +83,19 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+
+### Eclipse shortcut keys 
+
+**reference**
+- [linkedin](https://www.linkedin.com/pulse/top-30-eclipse-keyboard-shortcuts-java-programmer-jayveersinh-solanki/)
+
+key|description
+-|-
+ctr + alt + down | duplicates line
+ctr + d | deletes line
+ctr + shift + l | shows the shortcut keys
+
+[go back home][home]
 
 ### GregorianCalendar
 
