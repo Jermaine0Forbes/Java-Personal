@@ -22,6 +22,7 @@
 
 ## Editors 
 - [Eclipse shortcut keys][eclipse-shortcut]
+- [How to create Getters and Setters in a class][eclipse-getset]
 
 ## Enumerations
 
@@ -55,6 +56,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[eclipse-getset]:#how-to-create-getters-and-setters-in-a-class
 [eclipse-shortcut]:#eclipse-shortcut-keys
 [greg-cal]:#gregoriancalendar
 [char-string]:#how-to-convert-char-to-string
@@ -83,6 +85,17 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+
+
+
+### How to create getters and setters in a class 
+
+1. In eclipse right click on the mouse and look for the option **Source**, then look 
+for the option **Generate Getters and Setters**
+
+2. This will send you to a new window where you can select which property you want get or set 
+
+[go back home][home]
 
 ### Eclipse shortcut keys 
 
