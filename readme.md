@@ -20,6 +20,9 @@
 - [How to format dates][format-date]
 - [DateTimeFormatter table][time-table]
 
+## Design Patterns
+- [Singleton Pattern][singleton]
+
 ## Editors 
 - [Eclipse shortcut keys][eclipse-shortcut]
 - [How to create Getters and Setters in a class][eclipse-getset]
@@ -56,6 +59,7 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+[singleton]:#singleton-pattern
 [eclipse-getset]:#how-to-create-getters-and-setters-in-a-class
 [eclipse-shortcut]:#eclipse-shortcut-keys
 [greg-cal]:#gregoriancalendar
@@ -85,8 +89,25 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+### Singleton pattern
 
+```java 
+public class SingletonSample {
+   private static SingletonSample instance = null;
 
+   private SingletonSample() {
+   }
+
+   public static SingletonSample getInstance() {
+      if(instance == null) {
+         instance = new SingletonSample();
+      }
+      return instance;
+   }
+}
+```
+
+[go back home][home]
 
 ### How to create getters and setters in a class 
 
