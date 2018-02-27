@@ -106,7 +106,7 @@ public class SingletonSample {
    }
 }
 ```
-:poop:
+:house:
 
 [go back home][home]
 
