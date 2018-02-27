@@ -106,9 +106,9 @@ public class SingletonSample {
    }
 }
 ```
-:house:
 
-[go back home][home]
+
+[go back :house:][home]
 
 ### How to create getters and setters in a class 
 
