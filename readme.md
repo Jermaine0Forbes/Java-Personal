@@ -59,6 +59,10 @@
 - [how to receive all the values of a map][entry]
 - [how to determine size of the map][size]
 
+##  Scanner
+- [how to use the scanner][scanner]
+
+[scanner]:#how-to-use-scanner
 [singleton]:#singleton-pattern
 [eclipse-getset]:#how-to-create-getters-and-setters-in-a-class
 [eclipse-shortcut]:#eclipse-shortcut-keys
@@ -89,6 +93,42 @@
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+### how to use scanner
+
+<details>
+<summary>
+View content
+</summary>
+`import java.util.*;`
+
+```java
+Scanner scan = new Scanner(System.in);
+		String[] data = new String[4];
+		int x = 0;
+		String[] questions = {"what is your name?", "what city do you live in ",
+				"how old are you", "what race are you"};
+
+
+		for( String val: questions){
+			System.out.println(val);
+			data[x] = scan.nextLine();
+
+			x++;
+		};
+		scan.close();
+		System.out.println("your answers were");
+
+		for(String val: data){
+
+			System.out.println(val);
+		}
+```
+</details>
+
+
+[go back home][home]
+
+
 ### Singleton pattern
 
 ```java 
@@ -108,7 +148,7 @@ public class SingletonSample {
 ```
 
 
-[go back :house:][home]
+[go back  :house:][home]
 
 ### How to create getters and setters in a class 
 
