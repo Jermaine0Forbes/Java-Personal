@@ -2,6 +2,179 @@
 
 ---
 
+
+
+
+## 3/2/18
+
+
+## jaxb tutorial links 
+
+:link: https://www.javatpoint.com/jaxb-tutorial
+:link: https://www.javacodegeeks.com/2014/12/jaxb-tutorial-xml-binding.html
+
+
+### how to create a `List`
+
+:link: http://tutorials.jenkov.com/java-collections/list.html
+
+```java
+List listA = new ArrayList();
+List listB = new LinkedList();
+List listC = new Vector();
+List listD = new Stack();
+```
+
+### if file exists
+
+checking to see if a file exists 
+
+```java
+File f = new File(filePathString);
+if(f.exists() && !f.isDirectory()) { 
+    // do something
+}
+
+```
+
+### using jaxb and appending data to xml files 
+
+**Server**
+```java
+package com.tools;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name = "server")
+public class Server {
+
+    private String servername;
+    private String ipaddress;
+    private int port;
+
+    public Server() {
+    }
+
+    public Server(String servername, String ipaddress, int port) {
+        super();
+        this.servername = servername;
+        this.ipaddress = ipaddress;
+        this.port = port;
+    }
+
+    @XmlElement
+    public String getServerName() {
+        return servername;
+    }
+
+    public void setServerName(String servername) {
+        this.servername = servername;
+    }
+
+    @XmlElement
+    public String getIpAddress() {
+        return ipaddress;
+    }
+
+    public void setIpAddress(String ipaddress) {
+        this.ipaddress = ipaddress;
+    }
+
+    @XmlElement
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    @Override
+    public String toString() {
+        return servername + " " + ipaddress + " " + port;
+    }
+}
+```
+**Servers**
+```java
+package com.tools;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
+
+@XmlRootElement(name = "servers")
+public class Servers {
+
+    private List<Server> servers;
+
+    public List<Server> getServers() {
+        return servers;
+    }
+
+    @XmlElement(name = "server")
+    public void setServers(List<Server> servers) {
+        this.servers = servers;
+    }
+
+    @Override
+    public String toString() {
+        return servers.toString();
+    }
+
+}
+```
+
+**Main File**
+```java
+package com.tools;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
+public class ToolConfiguration {
+    public static void main(String args[])
+    {
+        String configFileName = "/config.xml";
+        File configFile = new File(ToolConfiguration.class.getResource(configFileName).getFile());
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(Servers.class);
+            // Read XML
+            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+            Servers servers = (Servers) unmarshaller.unmarshal(configFile);
+
+            Server server = new Server("abv", "1.9.3.5", 8080);
+
+            List<Server> serversList = servers.getServers();
+            serversList.add(server);
+
+            servers.setServers(serversList);
+
+            Marshaller marshaller = jaxbContext.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(servers, configFile);
+
+            /*List<Server> serversList = servers.getServers();
+            for (Server server : serversList) {
+                System.out.println(server.toString());
+            }*/
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+
 ## 11/7/17
 
 ### shit about threads

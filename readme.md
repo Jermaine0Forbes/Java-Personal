@@ -161,6 +161,10 @@ for the option **Generate Getters and Setters**
 
 ### Eclipse shortcut keys 
 
+<details>
+<summary>
+View Content
+</summary>
 **reference**
 - [linkedin](https://www.linkedin.com/pulse/top-30-eclipse-keyboard-shortcuts-java-programmer-jayveersinh-solanki/)
 
@@ -168,9 +172,12 @@ key|description
 -|-
 ctr + alt + down | duplicates line
 ctr + d | deletes line
+ctr + f | opens up the find and replace window
 ctr + shift + l | shows the shortcut keys
+ctr + shift + f | organizes your code
+</details>
 
-[go back home][home]
+[go back :house:][home]
 
 ### GregorianCalendar
 
