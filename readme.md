@@ -64,6 +64,9 @@
 
 ##  Scanner
 - [how to use the scanner][scanner]
+
+
+
 [create-jaxb]:#how-to-create-a-jaxb
 [scanner]:#how-to-use-scanner
 [singleton]:#singleton-pattern
@@ -359,7 +362,7 @@ Scanner scan = new Scanner(System.in);
 </details>
 
 
-[go back home][home]
+[go back :house:][home]
 
 
 ### Singleton pattern
