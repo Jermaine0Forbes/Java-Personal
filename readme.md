@@ -39,8 +39,8 @@
 - [public, private, protected][access-modifiers]
 
 ## JAXB
-
 - [how to create a JAXB][create-jaxb]
+- [how to retrieve JAXB][retrieve-jaxb]
 
 ## Lambda Expressions
 - [what is a lambda expression][what-lambda]
@@ -66,7 +66,7 @@
 - [how to use the scanner][scanner]
 
 
-
+[retrieve-jaxb]:#how-to-retrieve-jaxb
 [create-jaxb]:#how-to-create-a-jaxb
 [scanner]:#how-to-use-scanner
 [singleton]:#singleton-pattern
@@ -98,6 +98,62 @@
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+
+### how to retrieve jaxb
+
+<details>
+<summary>
+View Content
+</summary>
+
+I'm not going to write out a long description
+on how to do it, I am just going to show you code so you can get it 
+
+```java
+package jaxb;
+import javax.xml.bind.*;
+import javax.xml.transform.Result;
+import java.util.*;
+import java.io.*;
+
+public class EmployeeJAXB {
+
+	 private String path = "src\\data\\Employee.xml";
+	 private JAXBContext jb;
+	 private File xmlFile = new File(path);
+	 private Employees emps;
+
+	
+	public void getXML(){
+
+		try{
+			jb = JAXBContext.newInstance(Employees.class);
+			Unmarshaller ums = jb.createUnmarshaller();
+			 emp = (Employees)ums.unmarshal(xmlFile);
+
+			System.out.println("Employee Information:");
+			System.out.println("id: "+emp.getId());
+			System.out.println("name: "+emp.getName());
+			System.out.println("address: "+emp.getAddress());
+			System.out.println("salary: "+emp.getSalary());
+
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+
+
+}
+
+```
+
+
+
+</details>
+
+[go back :house:][home]
 
 ### how to create a jaxb 
 
@@ -239,7 +295,7 @@ private String path = "src\\data\\Employee.xml"; // the path to file you create
 			Employee emp = new Employee(id, name,address);
 
 
-
+		}
 }
 ```
 
@@ -247,7 +303,7 @@ private String path = "src\\data\\Employee.xml"; // the path to file you create
 5.  in order to make the JAXB work you have to put it in a try and catch block like so. 
 and also add the marshall methods because this tutorial is taking too long 
 
-```
+```java
 package jaxb;
 
 // make sure you add these libraries
@@ -335,7 +391,9 @@ public class Main {
 <summary>
 View content
 </summary>
-`import java.util.*;`
+
+
+Make sure you add this int the header `import java.util.*;`
 
 ```java
 Scanner scan = new Scanner(System.in);
