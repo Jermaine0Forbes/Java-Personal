@@ -38,6 +38,9 @@
 
 - [public, private, protected][access-modifiers]
 
+## JAXB
+
+- [how to create a JAXB][create-jaxb]
 
 ## Lambda Expressions
 - [what is a lambda expression][what-lambda]
@@ -61,7 +64,7 @@
 
 ##  Scanner
 - [how to use the scanner][scanner]
-
+[create-jaxb]:#how-to-create-a-jaxb
 [scanner]:#how-to-use-scanner
 [singleton]:#singleton-pattern
 [eclipse-getset]:#how-to-create-getters-and-setters-in-a-class
@@ -92,6 +95,236 @@
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
+
+### how to create a jaxb 
+
+<details>
+<summary>
+View Content
+</summary>
+
+So JAXB allows you to store values from an object into an XML file . 
+The method name to store the file is called `marshall` which always reminds 
+me of marshmellow. Anyways
+
+1. create a simple class that has properties you can assign values to and
+the **XML** element tags
+
+```java
+package jaxb;
+import javax.xml.bind.annotation.*;
+
+// you need to add this to the class that contain all the other elements
+@XmlRootElement(name="Employee")
+public class Employee {
+
+	private String id, name, address;
+
+	
+
+	// This is an element you need to add if you want to store the properties in tags
+	@XmlElement
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	@XmlElement
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@XmlElement
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	
+
+	public Employee(String id, String name, String address, String salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.salary = salary;
+	}
+
+
+	public Employee(){
+
+	}
+
+
+}
+```
+
+
+2. Next you need to create a simple class that is going to store the values in XML 
+with JAXB 
+
+```java
+package jaxb;
+
+// make sure you add these libraries
+import javax.xml.bind.*;
+import javax.xml.transform.Result;
+import java.util.*;
+import java.io.*;
+
+public class EmployeeJAXB {
+
+
+}
+
+```
+
+3. Next add the properties like path, that will create to store XML File. And xmlFile that will create a 
+new file based on the path that you created 
+
+```java
+
+package jaxb;
+
+// make sure you add these libraries
+import javax.xml.bind.*;
+import javax.xml.transform.Result;
+import java.util.*;
+import java.io.*;
+
+public class EmployeeJAXB {
+private String path = "src\\data\\Employee.xml"; // the path to file you create
+	 private JAXBContext jb; // this will be used to store or retrieve information 
+	 private File xmlFile = new File(path);// this creates the new file that you will use later
+
+}
+
+```
+
+4. now create a method that will store the properties and have the parameters of the method be the values 
+of the Employee class 
+
+```java
+package jaxb;
+
+// make sure you add these libraries
+import javax.xml.bind.*;
+import javax.xml.transform.Result;
+import java.util.*;
+import java.io.*;
+
+public class EmployeeJAXB {
+private String path = "src\\data\\Employee.xml"; // the path to file you create
+	 private JAXBContext jb; // this will be used to store or retrieve information 
+	 private File xmlFile = new File(path);// this creates the new file that you will use later
+	 
+	 
+	 	public void storeXML(String id, String name, String address){
+		
+	
+			Employee emp = new Employee(id, name,address);
+
+
+
+}
+```
+
+
+5.  in order to make the JAXB work you have to put it in a try and catch block like so. 
+and also add the marshall methods because this tutorial is taking too long 
+
+```
+package jaxb;
+
+// make sure you add these libraries
+import javax.xml.bind.*;
+import javax.xml.transform.Result;
+import java.util.*;
+import java.io.*;
+
+public class EmployeeJAXB {
+private String path = "src\\data\\Employee.xml"; // the path to file you create
+	 private JAXBContext jb; // this will be used to store or retrieve information 
+	 private File xmlFile = new File(path);// this creates the new file that you will use later
+	 
+	 
+	 	public void storeXML(String id, String name, String address){
+		
+	
+			Employee emp = new Employee(id, name,address);
+
+			try{
+
+
+
+			Employee emp = new Employee(id, name,address,salary);
+			jb = JAXBContext.newInstance(Employees.class);
+
+
+			
+
+
+			// this creates the marshall or store the properties in a XML file
+			Marshaller ms = jb.createMarshaller();
+			ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			ms.marshal(emps, System.out);
+			ms.marshal(emps, xmlFile);
+
+
+		}catch(JAXBException e){
+			System.out.println(e.getMessage());
+	}
+
+
+	}
+}
+
+```
+
+6. Now in a Main.java file  create an instance of EmployeeJAXB and call the method storeXML
+
+```java
+
+import java.util.*;
+
+import jaxb.*;
+
+public class Main {
+
+	public static void log(String val){
+
+		System.out.println(val);
+	}
+
+	public static void main (String[] args){
+
+		EmployeeJAXB obj = new EmployeeJAXB();
+
+	// this will now execute the JAXB shit
+		obj.storeXML("2", "jermaine", "123 main st");
+
+
+
+	}
+
+}
+
+```
+
+</details>
+
+[go back :house:][home]
 
 ### how to use scanner
 
