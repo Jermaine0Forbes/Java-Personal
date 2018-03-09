@@ -122,15 +122,19 @@ public class EmployeeJAXB {
 	 private String path = "src\\data\\Employee.xml";
 	 private JAXBContext jb;
 	 private File xmlFile = new File(path);
-	 private Employees emps;
+	 private Employee emp;
 
 	
 	public void getXML(){
 
 		try{
-			jb = JAXBContext.newInstance(Employees.class);
+			// this allow JAXB to retrieve the XML and turn it into a Employee class
+			jb = JAXBContext.newInstance(Employee.class);
+			// I believe this prepares the variable ums to be used for extracting
+			// XML data
 			Unmarshaller ums = jb.createUnmarshaller();
-			 emp = (Employees)ums.unmarshal(xmlFile);
+			// This actually extracts the data and puts it on a Employee instance;
+			 emp = (Employee)ums.unmarshal(xmlFile);
 
 			System.out.println("Employee Information:");
 			System.out.println("id: "+emp.getId());
