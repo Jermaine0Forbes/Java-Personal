@@ -972,6 +972,10 @@ choice.setValue("Animal");
 
 ### ChoiceBox.getItems.addAll
 
+<details>
+<summary>
+View Content
+</summary>
 Adds multiple items to the ChoiceBox
 
 ```java
@@ -979,28 +983,54 @@ ChoiceBox<String> choice  = new ChoiceBox();
 
 choice.getItems().addAll("Apple", "Athritus","Animal", "Arrogant");
 ```
+</details>
 
-[go back home][home]
+
+[go back :house:][home]
 
 ### ChoiceBox.getItems.add
 
+<details>
+<summary>
+View Content
+</summary>
 Adds an option to the choicebox
 
 ```java
 ChoiceBox<String> choice  = new ChoiceBox();
 
 choice.getItems().add("Apple");
-```		
+```	
 
-[go back home][home]
+</details>
+
+	
+
+[go back :house:][home]
 
 ### How to initialize ChoiceBox
 
+<details>
+<summary>
+View Content
+</summary>
 `ChoiceBox<Data Type> choice = new ChoiceBox();`
 
 ```java
 ChoiceBox<String> choice = new ChoiceBox();
+```
+
+</details>
+
+
+[go back :house:][home]
+
 ### How to create an alert box
+
+<details>
+<summary>
+View Content
+</summary>
 
 You have to create two files one for the main javafx window that we will call
 **App** and the other file for the next window that we are going to call **Modal**.
@@ -1062,7 +1092,11 @@ public class Modal {
 
 ```
 
-[go back home][home]
+</details>
+
+
+
+[go back :house:][home]
 
 ### GridPane.setPadding
 
