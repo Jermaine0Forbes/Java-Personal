@@ -53,14 +53,17 @@
 
 ## Collections
 
+- [how to retrieves all the keys in the list][keySet]
+- [how to determine if a list is empty][isEmpty]
+- [how to receive all the values of a list][entry]
+- [how to determine size of the list][size]
+- [how to determine retrieve a value from a list]
+
 **hashmap**
 
 - [how to create a hash map][hashmap]
 - [how to add key-values into the map][key-values]
-- [how to retrieves all the keys in the map][keySet]
-- [how to determine if a map is empty][isEmpty]
-- [how to receive all the values of a map][entry]
-- [how to determine size of the map][size]
+
 
 ##  Scanner
 - [how to use the scanner][scanner]
@@ -90,15 +93,22 @@
 [a-list]:#how-to-create-an-ArrayList
 [substring]:#how-to-use-the-substring
 [trim]:#how-to-use-the-trim-method
-[entry]:#how-to-receive-all-the-values-of-a-map
-[size]:#how-to-determine-size-of-the-map
-[isEmpty]:#how-to-determine-if-a-map-is-empty
-[keySet]:#how-to-retrieves-all-the-keys-in-the-map
+[entry]:#how-to-receive-all-the-values-of-a-list
+[size]:#how-to-determine-size-of-the-list
+[isEmpty]:#how-to-determine-if-a-list-is-empty
+[keySet]:#how-to-retrieves-all-the-keys-in-the-list
 [key-values]:#how-to-add-key-values-into-the-map
 [home]:#java-reference
 [array]:#how-to-create-an-array
 [hashmap]:#how-to-create-a-hash-map
 
+
+
+
+
+
+
+---
 
 ### how to retrieve jaxb
 
@@ -1265,8 +1275,8 @@ ArrayList<String> arr = new ArrayList<String>();
 
 [go back home][home]
 
-### how to determine size of the map
-- map.size() will give you the number
+### how to determine size of the list
+- list.size() will give you the number
 
 ```java
 
@@ -1283,8 +1293,8 @@ ArrayList<String> arr = new ArrayList<String>();
 ```
 [go back home][home]
 
-### how to receive all the values of a map
-- map.values() will return all the values
+### how to receive all the values of a list
+- list.values() will return all the values
 
 ```java
 
@@ -1303,8 +1313,8 @@ ArrayList<String> arr = new ArrayList<String>();
 ```
 [go back home][home]
 
-### how to determine if a map is empty
-- map.isEmpty returns a boolean value of whether the map is empty or not
+### how to determine if a list is empty
+- list.isEmpty returns a boolean value of whether the list is empty or not
 
 ```java
     Map <String , Integer> animals = new HashMap <>();
@@ -1314,8 +1324,8 @@ ArrayList<String> arr = new ArrayList<String>();
 ```
 [go back home][home]
 
-### how to retrieves all the keys in the map
-- map.keySet returns all the keys in a array like output
+### how to retrieves all the keys in the list
+- list.keySet returns all the keys in a array like output
 
 ```java
 

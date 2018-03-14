@@ -97,6 +97,10 @@ shit.
 - [TableColumn.setCellValueFactory()][table-cellvalue]
 - [ FXCollections.observableArrayList()][fxcollections]
 
+## Menu 
+- [How to create a menu][create-menu]
+
+[create-menu]:#how-to-create-a-menu
 [string-property]:#how-to-create-a-stringproperty
 [treeitem-expand]:#treeitemsetexpanded
 [treeview-show]:#treeviewsetshowroot
@@ -150,6 +154,57 @@ shit.
 [stage-show]:#stageshow
 [home]:#javafx-guide
 [stage-title]:#stagesettitle
+
+
+---
+
+
+
+
+### How to create a menu
+
+<details>
+<summary>
+View Content
+</summary>
+
+```java
+	//creates menu
+		MenuBar menu = new MenuBar();
+	
+	//creates menu options
+		Menu ocean = new Menu("Ocean");
+		Menu lake = new Menu("Lake");
+		Menu pond = new Menu("Pond");
+	
+	// creates items for options
+	
+		MenuItem squid = new MenuItem("squid");
+		MenuItem shark = new MenuItem("shark");
+		MenuItem barracuda = new MenuItem("barracuda");
+
+		MenuItem bear = new MenuItem("bear");
+		MenuItem salmon = new MenuItem("salmon");
+		MenuItem alligator = new MenuItem("alligator");
+
+		MenuItem duck = new MenuItem("duck");
+		MenuItem frog = new MenuItem("frog");
+		MenuItem fish = new MenuItem("fish");
+
+		ocean.getItems().addAll(squid,shark,barracuda);
+		lake.getItems().addAll(bear,salmon,alligator);
+		pond.getItems().addAll(duck,frog,fish);
+
+		menu.getMenus().addAll(ocean,lake,pond);
+		menu.setPrefWidth(720);
+		FlowPane root = new FlowPane();
+
+		root.getChildren().add(menu);
+```
+</details>
+
+[go back :house:][home]
+
 
 ### TreeItem.setExpanded()
 
