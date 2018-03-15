@@ -8,6 +8,8 @@ shit.
 
 - [setOnAction][btn-event]
 - [addListener][listen-please]
+- [setOnKeyPressed][key-pressed]
+- [setOnKeyReleased][key-release]
 
 ## Stage
 - [setTitle][stage-title]
@@ -100,6 +102,8 @@ shit.
 ## Menu 
 - [How to create a menu][create-menu]
 
+[key-pressed]:#setonkeypressed
+[key-release]:#setonkeyreleased
 [create-menu]:#how-to-create-a-menu
 [string-property]:#how-to-create-a-stringproperty
 [treeitem-expand]:#treeitemsetexpanded
@@ -159,6 +163,78 @@ shit.
 ---
 
 
+
+
+
+### setOnKeyReleased
+
+<details>
+<summary>
+View Content
+</summary>
+
+This method will trigger when you stop pressing a key
+
+```java
+theScene.setOnKeyReleased(
+            new EventHandler<KeyEvent>()
+            {
+                public void handle(KeyEvent e)
+                {
+                    String code = e.getCode().toString();
+                    input.remove( code );
+                }
+            });
+```
+**In Lambda Format**
+```java
+
+scene.setOnKeyReleased((e) -> {
+			String code = e.getCode().toString();
+			input.remove( code );
+		});
+```
+</details>
+
+[go back :house:][home]
+
+### setOnKeyPressed
+
+<details>
+<summary>
+View Content
+</summary>
+
+This method will trigger when a key gets pressed 
+
+```java
+ theScene.setOnKeyPressed(
+            new EventHandler<KeyEvent>()
+            {
+                public void handle(KeyEvent e)
+                {
+                    String code = e.getCode().toString();
+ 
+                    // only add once... prevent duplicates
+                    if ( !input.contains(code) )
+                        input.add( code );
+                }
+            });
+```
+**In Lambda Format**
+```java
+
+scene.setOnKeyPressed((e) -> {
+			String code = e.getCode().toString();
+ 
+                    // only add once... prevent duplicates
+                    if ( !input.contains(code) )
+                        input.add( code );
+		});
+```
+</details>
+
+[go back :house:][home]
 
 
 ### How to create a menu
