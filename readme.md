@@ -68,7 +68,10 @@
 ##  Scanner
 - [how to use the scanner][scanner]
 
+## Math
+- [how to get a random number range][random-range]
 
+[random-range]:#how-to-get-a-random-number-range
 [retrieve-jaxb]:#how-to-retrieve-jaxb
 [create-jaxb]:#how-to-create-a-jaxb
 [scanner]:#how-to-use-scanner
@@ -90,7 +93,7 @@
 [time-table]:#datetimeformatter-table
 [format-date]:#datetimeformatterofpattern
 [localD]:#localdatenow
-[a-list]:#how-to-create-an-ArrayList
+[a-list]:#how-to-create-an-arraylist
 [substring]:#how-to-use-the-substring
 [trim]:#how-to-use-the-trim-method
 [entry]:#how-to-receive-all-the-values-of-a-list
@@ -109,6 +112,27 @@
 
 
 ---
+
+
+### how to get a random number range 
+<details>
+<summary>
+View Content
+</summary>
+
+Gets the maximum and minimum value of the random number
+
+```java 
+public int randInt(int max, int min){
+
+int random = min + (int)(Math.random()*((max-min)+1));
+
+return random;
+}
+```
+</details>
+
+[go back :house:][home]
 
 ### how to retrieve jaxb
 
