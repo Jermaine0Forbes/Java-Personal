@@ -68,9 +68,15 @@
 ##  Scanner
 - [how to use the scanner][scanner]
 
+## SQLite 
+
+- [how to install SQLite][install-lite]
+
+
 ## Math
 - [how to get a random number range][random-range]
 
+[install-lite]:#how-to-install-sqlite
 [random-range]:#how-to-get-a-random-number-range
 [retrieve-jaxb]:#how-to-retrieve-jaxb
 [create-jaxb]:#how-to-create-a-jaxb
@@ -112,6 +118,79 @@
 
 
 ---
+
+### how to install SQLite
+
+<details>
+<summary>
+View Content
+</summary>
+
+1. Install the SQLite libray from [here](https://bitbucket.org/xerial/sqlite-jdbc/downloads/)
+
+2. In a new project, make sure you right click on the project and go to 
+**Properties -> Java Build Path -> Add External JARs** and find the library that you just downloaded
+
+3. Once you injected the library into the project, add this code **and** change the url 
+to the database you want to create
+
+```java
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Main {
+	
+	private static String url = "jdbc:sqlite:C:/Users/J/Documents/Web Development/SQLite/people.db";
+	private static Connection conn = null;
+	private static Statement st;
+	private static ResultSet rs;
+	
+	
+	
+	public static void connect() {
+        
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:C:/Users/J/Documents/Web Development/SQLite/people.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+            
+            System.out.println("Connection to SQLite has been established.");
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		connect();
+
+
+	}
+
+}
+
+
+```
+
+</details>
+
+
+[go back :house:][home]
 
 
 ### how to get a random number range 
