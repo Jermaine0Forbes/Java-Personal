@@ -2,6 +2,15 @@
 
 ---
 
+## 7/1/18
+
+how to use choices in JavaFX
+
+```
+
+
+```
+
 ## 5/3/18
 
 ###
